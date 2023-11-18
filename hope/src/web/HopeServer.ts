@@ -22,8 +22,10 @@ const port: number = parseInt(process.env.PORT || "8080");
 const routes = setupRoutes();
 app.use("/", routes);
 
-app.listen(port, () => {
-    console.log(`? Listening on the port ${port}`);
-});
+const startServer = async () => {
+    app.listen(port, () => {
+        console.log(`? Listening on the port ${port}`);
+    });
+}
 
-export default client;
+export default startServer;

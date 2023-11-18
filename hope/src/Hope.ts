@@ -1,6 +1,7 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import * as dotenv from "dotenv";
 import Config from "./Config";
+import startServer from "./web/HopeServer";
 
 dotenv.config();
 
@@ -29,4 +30,5 @@ bot.on("messageCreate", (message) => {
     }
 });
 
+startServer();
 bot.login(Config.Token);
