@@ -6,7 +6,7 @@ const router = Router();
 export default function setupRoutes(): Router {
     const exampleController = new ExampleController();
 
-    router.post("/", exampleController.get);
+    router.get("/", exampleController.get);
 
     return router;
 }
