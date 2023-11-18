@@ -51,10 +51,7 @@
     <Folder Include="src\web\routes\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="src\commands\command.ts" />
     <TypeScriptCompile Include="src\commands\default\fun\poke.ts" />
-    <TypeScriptCompile Include="src\commands\handler.ts" />
-    <TypeScriptCompile Include="src\commands\typings.ts" />
     <TypeScriptCompile Include="src\Config.ts" />
     <TypeScriptCompile Include="src\events\ready.ts" />
     <TypeScriptCompile Include="src\Hope.ts" />
