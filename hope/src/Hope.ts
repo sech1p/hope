@@ -17,4 +17,16 @@ bot.on("ready", () => {
     console.log("? Bot is ready!");
 });
 
+bot.on("messageCreate", (message) => {
+    if (message.author.bot) return;
+    if (!message.content.startsWith(Config.Prefix)) return;
+
+    const args = message.content.slice(Config.Prefix.length).trim().split(/ +/g);
+    const command = args.shift()?.toLowerCase();
+
+    if (command === "ping") {
+        message.channel.send("Pong!");
+    }
+});
+
 bot.login(Config.Token);
