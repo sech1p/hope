@@ -16,5 +16,7 @@ bot.on("messageCreate", (message) => {
     };
 });
 
-//startServer();
-bot.connect();
+const start = async () => {
+    await Promise.all([startServer(), bot.connect()]);
+}
+start();
