@@ -54,12 +54,6 @@ const loadCommands = async (bot) => {
     });
 };
 
-bot.on("messageCreate", (message) => {
-    if (message.content === "!ping") {
-        bot.createMessage(message.channel.id, "pong!");
-    };
-});
-
 const start = async () => {
     await loadEvents(bot);
     await loadCommands(bot);
