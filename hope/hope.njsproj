@@ -45,13 +45,16 @@
     <Folder Include="src\commands\" />
     <Folder Include="src\commands\default\" />
     <Folder Include="src\commands\default\fun\" />
+    <Folder Include="src\commands\default\help\" />
     <Folder Include="src\events\" />
     <Folder Include="src\web\" />
     <Folder Include="src\web\controllers\" />
     <Folder Include="src\web\routes\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="src\commands\default\fun\hug.ts" />
     <TypeScriptCompile Include="src\commands\default\fun\poke.ts" />
+    <TypeScriptCompile Include="src\commands\default\help\help.ts" />
     <TypeScriptCompile Include="src\Config.ts" />
     <TypeScriptCompile Include="src\events\ready.ts" />
     <TypeScriptCompile Include="src\Hope.ts" />
