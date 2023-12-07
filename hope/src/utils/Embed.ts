@@ -175,7 +175,7 @@ class EmbedBuilder {
         return this._author;
     };
 
-    field(name: string, value: string, inline?: boolean) {
+    fields(name: string, value: string, inline?: boolean) {
         if (name.length > 256) throw new Error("Embed field name cannot exceed 256 characters.");
         if (value.length > 1024) throw new Error("Embed field value cannot exceed 1024 characters.");
         if (this._fields.length >= 25) throw new Error("Embed field limit reached (25).");
@@ -191,6 +191,7 @@ class EmbedBuilder {
             description: this._description,
             url: this._url,
             timestamp: this._timestamp,
+            author: this._author,
             color: this._color,
 
             footer: this._footer,
@@ -198,6 +199,7 @@ class EmbedBuilder {
             thumbnail: this._thumbnail,
             video: this._video,
             provider: this._provider,
+            fields: this._fields,
         };
     };
 };
