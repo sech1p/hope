@@ -3,6 +3,7 @@ import * as dotenv from "dotenv";
 import setupRoutes from "./routes/routes";
 import morgan from "morgan";
 import cors from "cors";
+import setupApiRoutes from "./routes/api.routes";
 
 dotenv.config();
 
@@ -20,7 +21,10 @@ app.use(express.urlencoded({
 const port: number = parseInt(process.env.PORT || "8080");
 
 const routes = setupRoutes();
+const apiRoutes = setupApiRoutes();
+
 app.use("/", routes);
+app.use("/api", apiRoutes);
 
 const startServer = async () => {
     app.listen(port, () => {
