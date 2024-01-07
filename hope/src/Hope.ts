@@ -6,6 +6,7 @@ import startServer from "./web/HopeServer";
 import glob from "glob-promise";
 
 const bot = Eris(Config.Token);
+const giphy = require("giphy-api")(Config.GiphyToken);
 
 const loadEvents = async (bot) => {
     console.log(`⏳ Loading events...`)
@@ -60,3 +61,5 @@ const start = async () => {
     await Promise.all([startServer(), bot.connect()]);
 }
 start();
+
+export default { giphy };
