@@ -8,7 +8,7 @@ import glob from "glob-promise";
 const bot = Eris(Config.Token);
 
 const loadEvents = async (bot) => {
-    console.log(`? Loading events...`)
+    console.log(`⏳ Loading events...`)
     await glob(`dist/events/*.js`).then(async (eventsFiles) => {
         for (const eventFile of eventsFiles) {
             try {
@@ -16,17 +16,17 @@ const loadEvents = async (bot) => {
                 if (typeof event.run === "function") {
                     bot.on(event.name, event.run.bind(null, bot));
                 } else {
-                    console.error("? Invalid event file, run function is missing");
+                    console.error("❌ Invalid event file, run function is missing");
                 };
             } catch (exception) {
-                console.error(`? Failed to load events: ${exception}`);
+                console.error(`❌ Failed to load events: ${exception}`);
             };
         };
     });
 };
 
 const loadCommands = async (bot) => {
-    console.log(`? Loading commands...`)
+    console.log(`⏳ Loading commands...`)
     await glob(`dist/commands/**/**/*.js`).then(async (commandFiles) => {
         for (const commandFile of commandFiles) {
             try {
@@ -45,10 +45,10 @@ const loadCommands = async (bot) => {
                         };
                     });
                 } else {
-                    console.error(`? Invalid command file, execute function in ${commandFile} is missing`);
+                    console.error(`❌ Invalid command file, execute function in ${commandFile} is missing`);
                 };
             } catch (exception) {
-                console.error(`? Failed to load commands: ${exception}`);
+                console.error(`❌ Failed to load commands: ${exception}`);
             };
         };
     });
