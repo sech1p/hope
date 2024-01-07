@@ -28,7 +28,7 @@ app.use("/api", apiRoutes);
 
 const startServer = async () => {
     app.listen(port, () => {
-        console.log(`? Listening on the port ${port}`);
+        console.log(`⭐ Listening on the port ${port}`);
     });
 }
 
