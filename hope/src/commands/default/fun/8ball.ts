@@ -1,4 +1,3 @@
-import giphy from "../../../Hope";
 import Embed from "../../../utils/Embed";
 
 export default {
