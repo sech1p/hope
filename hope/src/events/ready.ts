@@ -1,6 +1,8 @@
+import Hope from "../Hope";
+
 export default {
     name: "ready",
     run: (bot) => {
-        console.log("? Bot is ready!");
+        Hope.log("🌸 Bot is ready!");
     },
 };

@@ -4,7 +4,7 @@ import setupRoutes from "./routes/routes";
 import morgan from "morgan";
 import cors from "cors";
 import setupApiRoutes from "./routes/api.routes";
-
+import Hope from "../Hope";
 dotenv.config();
 
 const app: Application = express();
@@ -28,7 +28,7 @@ app.use("/api", apiRoutes);
 
 const startServer = async () => {
     app.listen(port, () => {
-        console.log(`⭐ Listening on the port ${port}`);
+        Hope.log(`⭐ Listening on the port ${port}`);
     });
 }
 

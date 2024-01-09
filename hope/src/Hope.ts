@@ -4,12 +4,21 @@ import path from "node:path";
 import Config from "./Config";
 import startServer from "./web/HopeServer";
 import glob from "glob-promise";
+import moment from "moment";
 
 const bot = Eris(Config.Token);
 const giphy = require("giphy-api")(Config.GiphyToken);
 
+const log = (message: string): any => {
+    console.log(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
+};
+
+const logError = (message: string): any => {
+    console.error(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
+};
+
 const loadEvents = async (bot) => {
-    console.log(`⏳ Loading events...`)
+    log(`⏳ Loading events...`)
     await glob(`dist/events/*.js`).then(async (eventsFiles) => {
         for (const eventFile of eventsFiles) {
             try {
@@ -17,17 +26,17 @@ const loadEvents = async (bot) => {
                 if (typeof event.run === "function") {
                     bot.on(event.name, event.run.bind(null, bot));
                 } else {
-                    console.error("❌ Invalid event file, run function is missing");
+                    logError("❌ Invalid event file, run function is missing");
                 };
             } catch (exception) {
-                console.error(`❌ Failed to load events: ${exception}`);
+                logError(`❌ Failed to load events: ${exception}`);
             };
         };
     });
 };
 
 const loadCommands = async (bot) => {
-    console.log(`⏳ Loading commands...`)
+    log(`⏳ Loading commands...`)
     await glob(`dist/commands/**/**/*.js`).then(async (commandFiles) => {
         for (const commandFile of commandFiles) {
             try {
@@ -46,10 +55,10 @@ const loadCommands = async (bot) => {
                         };
                     });
                 } else {
-                    console.error(`❌ Invalid command file, execute function in ${commandFile} is missing`);
+                    logError(`❌ Invalid command file, execute function in ${commandFile} is missing`);
                 };
             } catch (exception) {
-                console.error(`❌ Failed to load commands: ${exception}`);
+                logError(`❌ Failed to load commands: ${exception}`);
             };
         };
     });
@@ -62,4 +71,7 @@ const start = async () => {
 }
 start();
 
-export default { giphy };
+export default {
+    log,
+    giphy,
+};
