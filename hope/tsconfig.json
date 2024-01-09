@@ -4,7 +4,10 @@
     "esModuleInterop": true,
     "target": "es2021",
     "outDir": "dist",
-    "lib": ["es6"],
+    "lib": [
+      "es6",
+      "DOM",
+    ],
     "sourceMap": true
   },
   "exclude": [
