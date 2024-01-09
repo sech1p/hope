@@ -24,7 +24,7 @@ export default {
                     title: "❌ Sorry!",
                     description: "You don't have permissions to doing this",
                     color: Colors.Red,
-                })
+                });
                 if (exception instanceof DiscordRESTError && exception.code == 50013) {
                     await bot.createMessage(message.channel.id, { embed: embedFail.build() });
                 }
