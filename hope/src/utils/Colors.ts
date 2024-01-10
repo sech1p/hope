@@ -17,7 +17,7 @@ RANDOM = [
     White,
     Silver,
     Gray,
-][Math.floor(Math.random() * RANDOM.length)];
+];
 
 export default {
     Green,
