@@ -1,4 +1,5 @@
 import giphy from "../../../Hope";
+import Colors from "../../../utils/Colors";
 import Embed from "../../../utils/Embed";
 
 export default {
@@ -13,6 +14,7 @@ export default {
                 image: {
                     url: result.data[0].images.original.url,
                 },
+                color: Colors.Pink,
             });
             bot.createMessage(message.channel.id, `${user}, you are poked!`);
             bot.createMessage(message.channel.id, { embed: embed.build() });
