@@ -12,15 +12,15 @@ export default {
             case "server":
                 const serverArgument = args[1];
                 Minecraft.server(serverArgument)
-                    .then(response => {
+                    .then(server => {
                         let description, embed;
-                        if (response.status !== "error") {
-                            if (response.motd_json.extra) {
-                                for (let i of response.motd_json.extra) {
+                        if (server.status !== "error") {
+                            if (server.motd_json.extra) {
+                                for (let i of server.motd_json.extra) {
                                     description += i.text;
                                 }
                             } else {
-                                description = response.motd || response.motd_json;
+                                description = server.motd || server.motd_json;
                             }
                             
                             embed = new Embed.EmbedBuilder({
@@ -34,11 +34,11 @@ export default {
                                     },
                                     {
                                         name: "Players",
-                                        value: `${response.players.now} / ${response.players.max}`,
+                                        value: `${server.players.now} / ${server.players.max}`,
                                     },
                                     {
                                         name: "Minecraft version",
-                                        value: `${response.server.name} (protocol ${response.server.protocol})`,
+                                        value: `${server.server.name} (protocol ${server.server.protocol})`,
                                     },
                                 ],
                             });
@@ -50,7 +50,7 @@ export default {
                             color: Colors.Red,
                         });
 
-                        response.online ?
+                        server.online ?
                             bot.createMessage(message.channel.id, { embed: embed.build() }) :
                             bot.createMessage(message.channel.id, { embed: embedFail.build() });
                     });
