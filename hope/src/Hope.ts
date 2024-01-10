@@ -73,5 +73,6 @@ start();
 
 export default {
     log,
+    logError,
     giphy,
 };
