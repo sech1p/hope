@@ -6,10 +6,12 @@ import startServer from "./web/HopeServer";
 import glob from "glob-promise";
 import moment from "moment";
 import osu from "node-osu";
+import { EnkaClient } from "enka-network-api";
 
 const bot = Eris(Config.Token);
 const giphy = require("giphy-api")(Config.GiphyToken);
 const osuApi = new osu.Api(Config.osuApiKey, {});
+const genshinApi = new EnkaClient();
 
 const log = (message: string): any => {
     console.log(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
@@ -78,4 +80,5 @@ export default {
     logError,
     giphy,
     osuApi,
+    genshinApi,
 };
