@@ -6,6 +6,7 @@ const Yellow = 0x3498DB;
 const White = 0x3498DB;
 const Silver = 0x99A3A4;
 const Gray = 0x616A6B;
+const Pink = 0xFFC0CB;
 
 let RANDOM;
 RANDOM = [
@@ -17,6 +18,7 @@ RANDOM = [
     White,
     Silver,
     Gray,
+    Pink,
 ];
 
 export default {
@@ -28,5 +30,6 @@ export default {
     White,
     Silver,
     Gray,
+    Pink,
     RANDOM,
 };
