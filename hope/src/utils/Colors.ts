@@ -7,6 +7,18 @@ const White = 0x3498DB;
 const Silver = 0x99A3A4;
 const Gray = 0x616A6B;
 
+let RANDOM;
+RANDOM = [
+    Green,
+    Red,
+    Purple,
+    Blue,
+    Yellow,
+    White,
+    Silver,
+    Gray,
+][Math.floor(Math.random() * RANDOM.length)];
+
 export default {
     Green,
     Red,
@@ -16,4 +28,5 @@ export default {
     White,
     Silver,
     Gray,
+    RANDOM,
 };
