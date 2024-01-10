@@ -5,9 +5,11 @@ import Config from "./Config";
 import startServer from "./web/HopeServer";
 import glob from "glob-promise";
 import moment from "moment";
+import osu from "node-osu";
 
 const bot = Eris(Config.Token);
 const giphy = require("giphy-api")(Config.GiphyToken);
+const osuApi = new osu.Api(Config.osuApiKey, {});
 
 const log = (message: string): any => {
     console.log(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
@@ -17,7 +19,7 @@ const logError = (message: string): any => {
     console.error(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
 };
 
-const loadEvents = async (bot) => {
+const loadEvents = async (bot: Eris.Client) => {
     log(`⏳ Loading events...`)
     await glob(`dist/events/*.js`).then(async (eventsFiles) => {
         for (const eventFile of eventsFiles) {
@@ -35,14 +37,14 @@ const loadEvents = async (bot) => {
     });
 };
 
-const loadCommands = async (bot) => {
+const loadCommands = async (bot: Eris.Client) => {
     log(`⏳ Loading commands...`)
     await glob(`dist/commands/**/**/*.js`).then(async (commandFiles) => {
         for (const commandFile of commandFiles) {
             try {
                 const { default: command } = await import(path.join(process.cwd(), commandFile));
                 if (typeof command.execute === "function") {
-                    bot.on("messageCreate", (message) => {
+                    bot.on("messageCreate", (message: Eris.Message) => {
                         const content = message.content.trim();
 
                         if (content.startsWith(Config.Prefix)) {
@@ -75,4 +77,5 @@ export default {
     log,
     logError,
     giphy,
+    osuApi,
 };
