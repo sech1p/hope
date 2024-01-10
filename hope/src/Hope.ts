@@ -49,7 +49,7 @@ const loadCommands = async (bot: Eris.Client) => {
 
                         if (content.startsWith(Config.Prefix)) {
                             const args = content.slice(Config.Prefix.length).split(" ");
-                            const commandName = args.shift().toLowerCase();
+                            const commandName = args.shift()?.toLowerCase();
 
                             if (commandName === command.name.toLowerCase()) {
                                 command.execute(bot, message, args);
