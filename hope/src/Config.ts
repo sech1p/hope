@@ -12,6 +12,9 @@ const osuApiKey = process.env.OSU_API_KEY || "";
 const MALApiKey = process.env.MAL_API_KEY || "";
 const MALLogin = process.env.MAL_LOGIN || "";
 const MALPassword = process.env.MAL_PASSWORD || "";
+const AniListKey = process.env.ANILIST_API_KEY || "";
+const DanbooruLogin = process.env.DANBOORU_LOGIN || "";
+const DanbooruKey = process.env.DANBOORU_API_KEY || "";
 const Prefix = process.env.PREFIX || "!";
 
 export default {
@@ -24,5 +27,8 @@ export default {
     MALApiKey,
     MALLogin,
     MALPassword,
+    AniListKey,
+    DanbooruLogin,
+    DanbooruKey,
     Prefix,
 };
