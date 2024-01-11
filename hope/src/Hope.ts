@@ -7,11 +7,14 @@ import glob from "glob-promise";
 import moment from "moment";
 import osu from "node-osu";
 import { EnkaClient } from "enka-network-api";
+import { Mal } from "node-myanimelist";
 
 const bot = Eris(Config.Token);
 const giphy = require("giphy-api")(Config.GiphyToken);
 const osuApi = new osu.Api(Config.osuApiKey, {});
 const genshinApi = new EnkaClient();
+const malAuth = Mal.auth(Config.MALApiKey);
+const malApi = malAuth.Unstable.login(Config.MALLogin, Config.MALPassword);
 
 const log = (message: string): any => {
     console.log(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
@@ -81,4 +84,5 @@ export default {
     giphy,
     osuApi,
     genshinApi,
+    malApi,
 };
