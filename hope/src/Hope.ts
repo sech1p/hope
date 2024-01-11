@@ -9,6 +9,7 @@ import osu from "node-osu";
 import { EnkaClient } from "enka-network-api";
 import { Mal } from "node-myanimelist";
 import anilist from "anilist-node";
+import Booru from "booru";
 
 const bot = Eris(Config.Token);
 const giphy = require("giphy-api")(Config.GiphyToken);
@@ -88,4 +89,5 @@ export default {
     genshinApi,
     malApi,
     aniListApi,
+    Booru,
 };
