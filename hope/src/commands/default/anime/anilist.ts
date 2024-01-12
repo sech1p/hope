@@ -1,3 +1,4 @@
+import axios from "axios";
 import Config from "../../../Config";
 import Hope from "../../../Hope";
 import Embed from "../../../utils/Embed";
@@ -10,49 +11,15 @@ export default {
         switch (argument) {
             case "anime":
                 const animeArgument = args.slice(1).join(" ");
-                const filter = {
-                    isAdult: true,
-                    source_in: ["ORIGINAL", "LIGHT_NOVEL"]
-                };
-                Hope.aniListApi.searchEntry.anime(animeArgument, {
-                    isAdult: true,
-                    source_in: [
-                        "ORIGINAL",
-                        "DOUJINSHI",
-                        "LIGHT_NOVEL",
-                        "MANGA",
-                        "OTHER",
-                        "VIDEO_GAME",
-                        "VISUAL_NOVEL"
-                    ],
-                }).then(anime => {
-                    console.log(anime);
-                });
+                //
                 break;
             case "manga":
                 const mangaArgument = args.slice(1).join(" ");
-                Hope.aniListApi.searchEntry.manga(mangaArgument, {
-                    isAdult: true,
-                    source_in: [
-                        "ORIGINAL",
-                        "ANIME",
-                        "DOUJINSHI",
-                        "LIGHT_NOVEL",
-                        "NOVEL",
-                        "OTHER",
-                        "VIDEO_GAME",
-                        "VISUAL_NOVEL"
-                    ],
-                }).then(manga => {
-                    console.log(manga);
-                });
+                //
                 break;
             case "user":
                 const userArgument = args[1];
-                Hope.aniListApi.searchEntry.user(userArgument)
-                    .then(user => {
-                        console.log(user);
-                    });
+                //
                 break;
             default:
                 const defaultEmbed = new Embed.EmbedBuilder({

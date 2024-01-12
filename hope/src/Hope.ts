@@ -8,7 +8,6 @@ import moment from "moment";
 import osu from "node-osu";
 import { EnkaClient } from "enka-network-api";
 import { Mal } from "node-myanimelist";
-import anilist from "anilist-node";
 import Booru from "booru";
 
 const bot = Eris(Config.Token);
@@ -17,7 +16,6 @@ const osuApi = new osu.Api(Config.osuApiKey, {});
 const genshinApi = new EnkaClient();
 const malAuth = Mal.auth(Config.MALApiKey);
 const malApi = malAuth.Unstable.login(Config.MALLogin, Config.MALPassword);
-const aniListApi = new anilist(Config.AniListKey);
 
 const log = (message: string): any => {
     console.log(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
@@ -88,6 +86,5 @@ export default {
     osuApi,
     genshinApi,
     malApi,
-    aniListApi,
     Booru,
 };
