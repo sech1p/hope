@@ -1,5 +1,6 @@
 import * as weather from "weather-js";
 import Embed from "../../../utils/Embed";
+import Hope from "../../../Hope";
 
 export default {
     name: "weather",
@@ -39,6 +40,7 @@ export default {
                 thumbnail: {
                     url: result.current.imageUrl,
                 },
+                footer: Hope.footer(message),
             });
             bot.createMessage(message.channel.id, { embed: embed.build() });
         });

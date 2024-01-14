@@ -1,4 +1,6 @@
 import Config from "../../Config";
+import Hope from "../../Hope";
+import Colors from "../../utils/Colors";
 import Embed from "../../utils/Embed";
 
 export default {
@@ -22,6 +24,13 @@ export default {
         } catch (exception) {
             result = exception;
         }
-        bot.createMessage(message.channel.id, `Result: \`\`\`javascript\n${result}\`\`\``);
+
+        const embed = new Embed.EmbedBuilder({
+            title: "Result",
+            description: `\`\`\`javascript\n${result}\`\`\``,
+            color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+            footer: Hope.footer(message),
+        })
+        bot.createMessage(message.channel.id, { embed: embed.build() });
     },
 };

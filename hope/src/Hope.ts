@@ -27,6 +27,13 @@ const logError = (message: string): any => {
     console.error(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
 };
 
+const footer = (message: Eris.Message) => {
+    return {
+        text: `Invoked by ${message.author.username}`,
+        icon_url: message.author.avatarURL,
+    }
+};
+
 const loadEvents = async (bot: Eris.Client) => {
     log(`⏳ Loading events...`)
     await glob(`dist/events/*.js`).then(async (eventsFiles) => {
@@ -84,6 +91,7 @@ start();
 export default {
     log,
     logError,
+    footer,
     giphy,
     osuApi,
     genshinApi,

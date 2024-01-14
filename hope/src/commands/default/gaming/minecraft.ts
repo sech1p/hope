@@ -2,6 +2,7 @@ import Embed from "../../../utils/Embed";
 import Minecraft from "../../../utils/Minecraft";
 import Colors from "../../../utils/Colors";
 import Config from "../../../Config";
+import Hope from "../../../Hope";
 
 export default {
     name: "minecraft",
@@ -41,6 +42,7 @@ export default {
                                         value: `${server.server.name} (protocol ${server.server.protocol})`,
                                     },
                                 ],
+                                footer: Hope.footer(message),
                             });
                         }
 
@@ -48,6 +50,7 @@ export default {
                             title: `Stats for ${serverArgument}`,
                             description: "Server is offline",
                             color: Colors.Red,
+                            footer: Hope.footer(message),
                         });
 
                         server.online ?
@@ -63,6 +66,7 @@ export default {
                 const defaultEmbed = new Embed.EmbedBuilder({
                     title: "❌ This command does not exists",
                     description: `For available commands check \`${Config.Prefix}help\``,
+                    footer: Hope.footer(message),
                 });
                 bot.createMessage(message.channel.id, { embed: defaultEmbed.build() });
                 break;

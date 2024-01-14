@@ -1,3 +1,4 @@
+import Hope from "../../../Hope";
 import Embed from "../../../utils/Embed";
 
 export default {
@@ -24,6 +25,7 @@ export default {
                     value: `${osDays} days, ${osHours} hours`,
                 },
             ],
+            footer: Hope.footer(message),
         });
 
         bot.createMessage(message.channel.id, { embed: embed.build() });

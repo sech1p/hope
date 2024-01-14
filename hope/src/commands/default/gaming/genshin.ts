@@ -32,6 +32,7 @@ export default {
                                 }
                             ],
                             color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                            footer: Hope.footer(message),
                         });
                         bot.createMessage(message.channel.id, { embed: embed.build() });
                     }).catch(() => {
@@ -39,6 +40,7 @@ export default {
                             title: "❌ Sorry!",
                             description: "Provided user does not exists",
                             color: Colors.Red,
+                            footer: Hope.footer(message),
                         });
                         return bot.createMessage(message.channel.id, { embed: embedFail.build() });
                     });
@@ -49,6 +51,7 @@ export default {
                     const embedUsage = new Embed.EmbedBuilder({
                         title: "❌ Please insert an weapon",
                         description: "For list of weapons check: https://genshin-impact.fandom.com/wiki/Weapon",
+                        footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embedUsage.build() });
                 }
@@ -60,6 +63,7 @@ export default {
                             title: `${weapon.name.get()}`,
                             description: refinement ? `**${refinement.name.get()}**: ${refinement.description.get().replace(/<[^>]+>/g, "")}` : "No refinement",
                             color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                            footer: Hope.footer(message),
                         });
                         return bot.createMessage(message.channel.id, { embed: embed.build() });
                     }
@@ -69,9 +73,9 @@ export default {
                 const defaultEmbed = new Embed.EmbedBuilder({
                     title: "❌ This command does not exists",
                     description: `For available commands check \`${Config.Prefix}help\``,
+                    footer: Hope.footer(message),
                 });
                 return bot.createMessage(message.channel.id, { embed: defaultEmbed.build() });
-                break;
             }
     },
 };

@@ -27,6 +27,7 @@ export default {
                             title: "❌ Sorry!",
                             description: "Provided anime has not been found",
                             color: Colors.Red,
+                            footer: Hope.footer(message),
                         });
                         return bot.createMessage(message.channel.id, { embed: embedFail.build() });    
                     }
@@ -79,7 +80,8 @@ export default {
                         image: {
                             url: anime.coverImage.original,
                         },
-                        color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)]
+                        color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                        footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embed.build() });
                 });
@@ -101,6 +103,7 @@ export default {
                             title: "❌ Sorry!",
                             description: "Provided manga has not been found",
                             color: Colors.Red,
+                            footer: Hope.footer(message),
                         });
                         return bot.createMessage(message.channel.id, { embed: embedFail.build() });
                     }
@@ -143,6 +146,7 @@ export default {
                         image: {
                             url: manga.coverImage.original,
                         },
+                        footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embed.build() });
                     });
@@ -158,10 +162,12 @@ export default {
                 }).then(user => {
                     user = user.data[0];
                     if (!user) {
+                        console.log(message.author.avatar);
                         const embedFail = new Embed.EmbedBuilder({
                             title: "❌ Sorry!",
                             description: "Provided user has not been found",
                             color: Colors.Red,
+                            footer: Hope.footer(message),
                         });
                         return bot.createMessage(message.channel.id, { embed: embedFail.build() });
                     }
@@ -214,7 +220,8 @@ export default {
                         },
                         image: {
                             url: user.coverImage ? user.coverImage.tiny : null,
-                        }
+                        },
+                        footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embed.build() });
                 });
@@ -223,6 +230,7 @@ export default {
                 const defaultEmbed = new Embed.EmbedBuilder({
                     title: "❌ This command does not exists",
                     description: `For available commands check \`${Config.Prefix}help\``,
+                    footer: Hope.footer(message),
                 });
                 return bot.createMessage(message.channel.id, { embed: defaultEmbed.build() });
         }

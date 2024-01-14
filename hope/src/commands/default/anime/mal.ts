@@ -34,6 +34,7 @@ export default {
                         title: `Results for: ${animeArgument}`,
                         fields: animes,
                         color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                        footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embed.build() });
                 });
@@ -62,6 +63,7 @@ export default {
                         title: `Results for: ${mangaArgument}`,
                         fields: mangas,
                         color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                        footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embed.build() });
                 });
@@ -88,7 +90,8 @@ export default {
                                         value: user.location || "N/A",
                                     },
                                 ],
-                                color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)]
+                                color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                                footer: Hope.footer(message),
                             });
                             return bot.createMessage(message.channel.id, { embed: embed.build() });
                         });
@@ -110,6 +113,7 @@ export default {
                                 title: `${userArgument}'s anime list`,
                                 fields: animes,
                                 color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                                footer: Hope.footer(message),
                             });
                             return bot.createMessage(message.channel.id, { embed: embed.build() });
                         });
@@ -129,6 +133,7 @@ export default {
                                 title: `${userArgument}'s manga list`,
                                 fields: mangas,
                                 color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                                footer: Hope.footer(message),
                             });
                             return bot.createMessage(message.channel.id, { embed: embed.build() });
                         });
@@ -138,6 +143,7 @@ export default {
                 const defaultEmbed = new Embed.EmbedBuilder({
                     title: "❌ This command does not exists",
                     description: `For available commands check \`${Config.Prefix}help\``,
+                    footer: Hope.footer(message),
                 });
                 return bot.createMessage(message.channel.id, { embed: defaultEmbed.build() });
         }

@@ -18,6 +18,7 @@ export default {
                             url: post.fileUrl,
                         },
                         color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                        footer: Hope.footer(message),
                     });
                     bot.createMessage(message.channel.id, { embed: embed.build() });
                 }

@@ -44,12 +44,14 @@ export default {
                             },
                         ],
                         color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                        footer: Hope.footer(message),
                     });
                     bot.createMessage(message.channel.id, { embed: embed.build() });
                 }).catch(() => {
                         const embedFail = new Embed.EmbedBuilder({
                         title: "❌ User not found",
                         color: Colors.Red,
+                        footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embedFail.build() });
 
@@ -109,12 +111,14 @@ export default {
                             }
                         ],
                         color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
+                        footer: Hope.footer(message),
                     });
                     bot.createMessage(message.channel.id, { embed: embed.build() });
                 }).catch(() => {
                     const embedFail = new Embed.EmbedBuilder({
                         title: "❌ Beatmap not found",
                         color: Colors.Red,
+                        footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embedFail.build() });
                 });              
@@ -122,9 +126,9 @@ export default {
                 const defaultEmbed = new Embed.EmbedBuilder({
                     title: "❌ This command does not exists",
                     description: `For available commands check \`${Config.Prefix}help\``,
+                    footer: Hope.footer(message),
                 });
                 return bot.createMessage(message.channel.id, { embed: defaultEmbed.build() });
-                break;
         };
     },
 };
