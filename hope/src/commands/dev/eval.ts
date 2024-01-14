@@ -3,6 +3,8 @@ import Hope from "../../Hope";
 import Colors from "../../utils/Colors";
 import Embed from "../../utils/Embed";
 
+// TODO: fix broken eval();
+
 export default {
     name: "eval",
     description: "🤖 Evaluate code (**BOT OWNER ONLY**)",
