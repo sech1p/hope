@@ -1,3 +1,5 @@
+import Eris from "eris";
+
 type Embed = {
     title?: string;
     type?: string;
@@ -33,7 +35,7 @@ type Embed = {
         url?: string;
     };
     author?: {
-        name?: string;
+        name: string;
         url?: string;
         icon_url?: string;
         proxy_icon_url?: string;
@@ -80,7 +82,7 @@ class EmbedBuilder {
         url?: string;
     };
     _author: {
-        name?: string;
+        name: string;
         url?: string;
         icon_url?: string;
         proxy_icon_url?: string;
@@ -105,7 +107,7 @@ class EmbedBuilder {
         this._thumbnail = data.thumbnail || {};
         this._video = data.video || {};
         this._provider = data.provider || {};
-        this._author = data.author || {};
+        this._author = data.author;
         this._fields = data.fields || [];
     };
 
@@ -144,7 +146,6 @@ class EmbedBuilder {
     };
 
     footer(text: string, icon_url?: string, proxy_icon_url?: string) {
-        if (text.length > 2048) throw new Error("Embed footer text cannot exceed 2048 characters.");
         this._footer = { text, icon_url, proxy_icon_url };
         return this._footer;
     };
@@ -169,7 +170,7 @@ class EmbedBuilder {
         return this._provider;
     };
 
-    author(name?: string, url?: string, icon_url?: string, proxy_icon_url?: string) {
+    author(name: string, url?: string, icon_url?: string, proxy_icon_url?: string) {
         if (name.length > 256) throw new Error("Embed author name cannot exceed 256 characters.");
         this._author = { name, url, icon_url, proxy_icon_url };
         return this._author;
