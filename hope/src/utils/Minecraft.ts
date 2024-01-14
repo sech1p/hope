@@ -5,7 +5,7 @@ const server = async (serverIP: string): Promise<any> => {
     try {
         const response = await axios.get(`${Config.McApi}?ip=${serverIP}`);
         return response.data;
-    } catch (exception) {
+    } catch (exception: any) {
         return exception;
     }
 };

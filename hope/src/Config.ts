@@ -3,19 +3,19 @@ import path from "node:path";
 
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
-const Token = process.env.TOKEN || "";
-const GiphyToken = process.env.GIPHY_TOKEN || "";
-const OwnerId = process.env.OWNER_ID || "";
-const McApi = process.env.MC_API || "https://mcapi.us/server/status";
-const McSkinApi = process.env.MC_SKIN_API || "https://starlightskins.lunareclipse.studio/skin-render";
-const osuApiKey = process.env.OSU_API_KEY || "";
-const MALApiKey = process.env.MAL_API_KEY || "";
-const MALLogin = process.env.MAL_LOGIN || "";
-const MALPassword = process.env.MAL_PASSWORD || "";
-const AniListKey = process.env.ANILIST_API_KEY || "";
-const DanbooruLogin = process.env.DANBOORU_LOGIN || "";
-const DanbooruKey = process.env.DANBOORU_API_KEY || "";
-const Prefix = process.env.PREFIX || "!";
+const Token: string = process.env.TOKEN || "";
+const GiphyToken: string = process.env.GIPHY_TOKEN || "";
+const OwnerId: string = process.env.OWNER_ID || "";
+const McApi: string = process.env.MC_API || "https://mcapi.us/server/status";
+const McSkinApi: string = process.env.MC_SKIN_API || "https://starlightskins.lunareclipse.studio/skin-render";
+const osuApiKey: string = process.env.OSU_API_KEY || "";
+const MALApiKey: string = process.env.MAL_API_KEY || "";
+const MALLogin: string = process.env.MAL_LOGIN || "";
+const MALPassword: string = process.env.MAL_PASSWORD || "";
+const AniListKey: string = process.env.ANILIST_API_KEY || "";
+const DanbooruLogin: string = process.env.DANBOORU_LOGIN || "";
+const DanbooruKey: string = process.env.DANBOORU_API_KEY || "";
+const Prefix: string = process.env.PREFIX || "!";
 
 export default {
     Token,

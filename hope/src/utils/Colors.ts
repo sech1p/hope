@@ -1,12 +1,12 @@
-const Green = 0x00FF00;
-const Red = 0xFF0000;
-const Purple = 0x8E44AD;
-const Blue = 0x3498DB;
-const Yellow = 0x3498DB;
-const White = 0x3498DB;
-const Silver = 0x99A3A4;
-const Gray = 0x616A6B;
-const Pink = 0xFFC0CB;
+const Green: number = 0x00FF00;
+const Red: number = 0xFF0000;
+const Purple: number = 0x8E44AD;
+const Blue: number = 0x3498DB;
+const Yellow: number = 0x3498DB;
+const White: number = 0x3498DB;
+const Silver: number = 0x99A3A4;
+const Gray: number = 0x616A6B;
+const Pink: number = 0xFFC0CB;
 
 let RANDOM;
 RANDOM = [

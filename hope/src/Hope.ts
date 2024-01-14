@@ -36,7 +36,7 @@ const footer = (message: Eris.Message) => {
 
 const loadEvents = async (bot: Eris.Client) => {
     log(`⏳ Loading events...`)
-    await glob(`dist/events/*.js`).then(async (eventsFiles) => {
+    await glob(`dist/events/*.js`).then(async (eventsFiles: string[]) => {
         for (const eventFile of eventsFiles) {
             try {
                 const { default: event } = await import(path.join(process.cwd(), eventFile));
@@ -45,7 +45,7 @@ const loadEvents = async (bot: Eris.Client) => {
                 } else {
                     logError("❌ Invalid event file, run function is missing");
                 };
-            } catch (exception) {
+            } catch (exception: any) {
                 logError(`❌ Failed to load events: ${exception}`);
             };
         };
@@ -54,7 +54,7 @@ const loadEvents = async (bot: Eris.Client) => {
 
 const loadCommands = async (bot: Eris.Client) => {
     log(`⏳ Loading commands...`)
-    await glob(`dist/commands/**/**/*.js`).then(async (commandFiles) => {
+    await glob(`dist/commands/**/**/*.js`).then(async (commandFiles: string[]) => {
         for (const commandFile of commandFiles) {
             try {
                 const { default: command } = await import(path.join(process.cwd(), commandFile));
@@ -74,7 +74,7 @@ const loadCommands = async (bot: Eris.Client) => {
                 } else {
                     logError(`❌ Invalid command file, execute function in ${commandFile} is missing`);
                 };
-            } catch (exception) {
+            } catch (exception: any) {
                 logError(`❌ Failed to load commands: ${exception}`);
             };
         };
