@@ -48,7 +48,6 @@
     "node-myanimelist": "^4.1.2",
     "node-osu": "^2.2.1",
     "prettier-format": "^4.0.0",
-    "weather-js": "^2.0.0",
-    "youtube-api": "^3.0.1"
+    "weather-js": "^2.0.0"
   }
 }
