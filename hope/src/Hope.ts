@@ -9,6 +9,7 @@ import osu from "node-osu";
 import { EnkaClient } from "enka-network-api";
 import { Mal } from "node-myanimelist";
 import Booru from "booru";
+import Kitsu from "kitsu";
 
 const bot = Eris(Config.Token);
 const giphy = require("giphy-api")(Config.GiphyToken);
@@ -16,6 +17,7 @@ const osuApi = new osu.Api(Config.osuApiKey, {});
 const genshinApi = new EnkaClient();
 const malAuth = Mal.auth(Config.MALApiKey);
 const malApi = malAuth.Unstable.login(Config.MALLogin, Config.MALPassword);
+const kitsuApi = new Kitsu();
 
 const log = (message: string): any => {
     console.log(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
@@ -87,4 +89,5 @@ export default {
     genshinApi,
     malApi,
     Booru,
+    kitsuApi,
 };
