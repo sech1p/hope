@@ -7,7 +7,7 @@ import Config from "../../../Config";
 
 export default {
     name: "mal",
-    description: "myanimelist",
+    description: "📝 View anime(s)/manga(s) from MyAnimeList",
     execute: async (bot, message, args) => {
         const argument = args[0];
         switch (argument) {

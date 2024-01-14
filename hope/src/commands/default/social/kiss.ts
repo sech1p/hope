@@ -4,7 +4,7 @@ import Embed from "../../../utils/Embed";
 
 export default {
     name: "kiss",
-    description: "Kiss someone!",
+    description: "😽 Kiss someone!",
     execute: async (bot, message, args) => {
         const user = args[0];
         Hope.giphy.search("anime kiss", (exception, result) => {

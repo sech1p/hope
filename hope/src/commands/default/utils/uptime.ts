@@ -3,7 +3,7 @@ import Embed from "../../../utils/Embed";
 
 export default {
     name: "uptime",
-    description: "show uptime for bot",
+    description: "⏰ Show uptime for bot",
     execute: async (bot, message, args) => {
         const days = Math.floor(process.uptime() / 86400);
         const hours = Math.floor(process.uptime() / 3600);

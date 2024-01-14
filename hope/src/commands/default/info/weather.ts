@@ -4,7 +4,7 @@ import Hope from "../../../Hope";
 
 export default {
     name: "weather",
-    description: "Show weather for any city/country",
+    description: "⛅ Show weather for any city/country",
     execute: async (bot, message, args) => {
         const locationArgument = args[0];
         weather.find({

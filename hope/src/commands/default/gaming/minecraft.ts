@@ -6,7 +6,7 @@ import Hope from "../../../Hope";
 
 export default {
     name: "minecraft",
-    description: "",
+    description: "🎮 Statistics for Minecraft (server/user)",
     execute: (bot, message, args) => {
         const argument = args[0];
         switch (argument) {

@@ -4,7 +4,7 @@ import Embed from "../../../utils/Embed";
 
 export default {
     name: "tickle",
-    description: "Poke someone!",
+    description: "🪶 Tickle someone!",
     execute: async (bot, message, args) => {
         const tickleGifs = [
             "FDPJjtvBkIRYA",

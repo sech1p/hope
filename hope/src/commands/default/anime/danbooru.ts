@@ -4,7 +4,7 @@ import Embed from "../../../utils/Embed";
 
 export default {
     name: "danbooru",
-    description: "danbooru",
+    description: "📷 Search images in Danbooru",
     execute: async (bot, message, args) => {
         const argument = args.slice(0).join(" ");
 

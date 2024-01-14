@@ -6,7 +6,7 @@ import moment from "moment";
 
 export default {
     name: "osu",
-    description: "osu!",
+    description: "🎮 Statistics for osu!",
     execute: (bot, message, args) => {
         const argument = args[0];
         switch (argument) {

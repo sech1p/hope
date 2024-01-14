@@ -5,7 +5,7 @@ import Embed from "../../../utils/Embed";
 
 export default {
     name: "genshin",
-    description: "Genshin Impact",
+    description: "🎮 Statistics for Genshin Impact",
     execute: async (bot, message, args) => {
         const argument = args[0];
         switch (argument) {
