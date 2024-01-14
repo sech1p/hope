@@ -11,7 +11,8 @@ export default {
         const reason = args.slice(1).join(" ");
         if (user.startsWith("<@") && user.endsWith(">")) {
             const userId = user.slice(2, -1);
-            const member = message.channel.guild.members.get(userId);
+            const guild = bot.guilds.get(message.guildID);
+            const member = guild.members.get(userId);
             try {
                 await member.kick(0, reason);
                 const embed = new Embed.EmbedBuilder({
