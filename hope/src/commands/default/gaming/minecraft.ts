@@ -3,11 +3,12 @@ import Minecraft from "../../../utils/Minecraft";
 import Colors from "../../../utils/Colors";
 import Config from "../../../Config";
 import Hope from "../../../Hope";
+import Eris from "eris";
 
 export default {
     name: "minecraft",
     description: "🎮 Statistics for Minecraft (server/user)",
-    execute: (bot, message, args) => {
+    execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {
             case "server":

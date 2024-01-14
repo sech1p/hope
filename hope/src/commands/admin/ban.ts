@@ -6,7 +6,7 @@ import Hope from "../../Hope";
 export default {
     name: "ban",
     description: "🔨 Ban someone from Guild",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         const reason = args.slice(1).join(" ");
         if (user.startsWith("<@") && user.endsWith(">")) {

@@ -1,8 +1,9 @@
+import Eris from "eris";
 import Hope from "../Hope";
 
 export default {
     name: "ready",
-    run: (bot) => {
+    run: (bot: Eris.Client) => {
         Hope.log("😴 Bot is disconnected");
     },
 };

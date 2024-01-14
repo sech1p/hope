@@ -1,11 +1,12 @@
 import * as weather from "weather-js";
 import Embed from "../../../utils/Embed";
 import Hope from "../../../Hope";
+import Eris from "eris";
 
 export default {
     name: "weather",
     description: "⛅ Show weather for any city/country",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const locationArgument = args[0];
         weather.find({
             search: locationArgument,

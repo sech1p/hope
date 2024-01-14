@@ -1,3 +1,4 @@
+import Eris from "eris";
 import Config from "../../Config";
 import Hope from "../../Hope";
 import Colors from "../../utils/Colors";
@@ -8,7 +9,7 @@ import Embed from "../../utils/Embed";
 export default {
     name: "eval",
     description: "🤖 Evaluate code (**BOT OWNER ONLY**)",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         if (message.author.id !== Config.OwnerId) {
             return bot.createMessage(message.channel.id, "❌ You are not priviliged to use this command!");
         }

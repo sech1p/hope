@@ -1,3 +1,4 @@
+import Eris from "eris";
 import Hope from "../../../Hope"
 import Colors from "../../../utils/Colors";
 import Embed from "../../../utils/Embed";
@@ -5,7 +6,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "danbooru",
     description: "📷 Search images in Danbooru",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args.slice(0).join(" ");
 
         await Hope.Booru("danbooru").search(argument, { limit: 1, random: false })

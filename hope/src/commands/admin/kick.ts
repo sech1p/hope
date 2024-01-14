@@ -1,4 +1,4 @@
-import { DiscordRESTError } from "eris";
+import Eris, { DiscordRESTError } from "eris";
 import Embed from "../../utils/Embed";
 import Colors from "../../utils/Colors";
 import Hope from "../../Hope";
@@ -6,7 +6,7 @@ import Hope from "../../Hope";
 export default {
     name: "kick",
     description: "🦶 Kick someone from Guild",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         const reason = args.slice(1).join(" ");
         if (user.startsWith("<@") && user.endsWith(">")) {
@@ -14,7 +14,7 @@ export default {
             const guild = bot.guilds.get(message.guildID);
             const member = guild.members.get(userId);
             try {
-                await member.kick(0, reason);
+                await member.kick(reason);
                 const embed = new Embed.EmbedBuilder({
                     title: "🦶 Kick",
                     description: `User ${user} has been successfully kicked for \`${reason}\``,

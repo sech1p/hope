@@ -1,3 +1,4 @@
+import Eris from "eris";
 import Hope from "../../../Hope";
 import Colors from "../../../utils/Colors";
 import Embed from "../../../utils/Embed";
@@ -5,7 +6,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "8ball",
     description: "Ask magic ball about everything",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const responses = [
             "Yes!",
             "Nope",

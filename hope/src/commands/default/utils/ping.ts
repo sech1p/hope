@@ -1,10 +1,11 @@
+import Eris from "eris";
 import Hope from "../../../Hope";
 import Embed from "../../../utils/Embed";
 
 export default {
     name: "ping",
     description: "🏓 Pong!",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const startTime = Date.now();
         const ping = new Embed.EmbedBuilder({
             title: "🏓 Ping",

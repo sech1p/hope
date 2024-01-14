@@ -1,3 +1,4 @@
+import Eris from "eris";
 import Config from "../../../Config";
 import Hope from "../../../Hope";
 import Colors from "../../../utils/Colors";
@@ -6,7 +7,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "genshin",
     description: "🎮 Statistics for Genshin Impact",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {
             case "user":

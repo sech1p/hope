@@ -3,11 +3,12 @@ import Hope from "../../../Hope";
 import Colors from "../../../utils/Colors";
 import Embed from "../../../utils/Embed";
 import Config from "../../../Config";
+import Eris from "eris";
 
 export default {
     name: "kitsu",
     description: "📝 View anime(s)/manga(s) from Kitsu",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {
             case "anime":

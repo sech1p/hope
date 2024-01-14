@@ -1,3 +1,4 @@
+import Eris from "eris";
 import Config from "../../../Config";
 import Hope from "../../../Hope";
 import Colors from "../../../utils/Colors";
@@ -7,7 +8,7 @@ import moment from "moment";
 export default {
     name: "osu",
     description: "🎮 Statistics for osu!",
-    execute: (bot, message, args) => {
+    execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {
             case "user":

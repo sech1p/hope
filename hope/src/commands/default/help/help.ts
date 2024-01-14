@@ -1,9 +1,10 @@
+import Eris from "eris";
 import Embed from "../../../utils/Embed";
 
 export default {
     name: "help",
     description: "Display help",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         const embed = new Embed.EmbedBuilder({
             author: {

@@ -4,6 +4,7 @@ import Embed from "../../../utils/Embed";
 import moment from "moment";
 import Colors from "../../../utils/Colors";
 import Config from "../../../Config";
+import Eris from "eris";
 
 export default {
     name: "mal",

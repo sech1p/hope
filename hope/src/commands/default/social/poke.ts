@@ -1,3 +1,4 @@
+import Eris from "eris";
 import Hope from "../../../Hope";
 import Colors from "../../../utils/Colors";
 import Embed from "../../../utils/Embed";
@@ -5,7 +6,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "poke",
     description: "Poke someone!",
-    execute: async (bot, message, args) => {
+    execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         Hope.giphy.search("anime poke", (exception, result) => {
             if (exception) console.error(exception);
