@@ -1,6 +1,7 @@
 import { DiscordRESTError } from "eris";
 import Embed from "../../utils/Embed";
 import Colors from "../../utils/Colors";
+import Hope from "../../Hope";
 
 export default {
     name: "kick",
@@ -17,6 +18,7 @@ export default {
                     title: "🦶 Kick",
                     description: `User ${user} has been successfully kicked for \`${reason}\``,
                     color: Colors.Green,
+                    footer: Hope.footer(message),
                 });
                 await bot.createMessage(message.channel.id, { embed: embed.build() });
             } catch (exception) {
@@ -24,6 +26,7 @@ export default {
                     title: "❌ Sorry!",
                     description: "You don't have permissions to doing this",
                     color: Colors.Red,
+                    footer: Hope.footer(message),
                 })
                 if (exception instanceof DiscordRESTError && exception.code == 50013) {
                     await bot.createMessage(message.channel.id, { embed: embedFail.build() });

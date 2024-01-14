@@ -1,6 +1,7 @@
 import { DiscordRESTError } from "eris";
 import Embed from "../../utils/Embed";
 import Colors from "../../utils/Colors";
+import Hope from "../../Hope";
 
 export default {
     name: "prune",
@@ -11,6 +12,7 @@ export default {
                 title: "❌ Sorry!",
                 description: message,
                 color: Colors.Red,
+                footer: Hope.footer(message),
             });
             return embedFail.build();
         };
