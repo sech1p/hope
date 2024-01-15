@@ -9,6 +9,7 @@ import Eris from "eris";
 export default {
     name: "mal",
     description: "📝 View anime(s)/manga(s) from MyAnimeList",
+    category: "default/Anime",
     execute: async (bot, message, args) => {
         const argument = args[0];
         switch (argument) {

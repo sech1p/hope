@@ -8,6 +8,7 @@ import Eris from "eris";
 export default {
     name: "kitsu",
     description: "📝 View anime(s)/manga(s) from Kitsu",
+    category: "default/Anime",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {

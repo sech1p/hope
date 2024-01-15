@@ -9,6 +9,7 @@ import Embed from "../../utils/Embed";
 export default {
     name: "eval",
     description: "🤖 Evaluate code (**BOT OWNER ONLY**)",
+    category: "Dev",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         if (message.author.id !== Config.OwnerId) {
             return bot.createMessage(message.channel.id, "❌ You are not priviliged to use this command!");

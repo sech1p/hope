@@ -6,6 +6,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "kiss",
     description: "😽 Kiss someone!",
+    category: "default/Social",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         Hope.giphy.search("anime kiss", (exception, result) => {

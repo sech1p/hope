@@ -7,6 +7,7 @@ import Colors from "../../../utils/Colors";
 export default {
     name: "serverinfo",
     description: "📝 Get informations about Guild",
+    category: "default/Utils",
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const guild = bot.guilds.get(message.guildID);
         const embed = new Embed.EmbedBuilder({

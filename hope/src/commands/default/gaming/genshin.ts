@@ -7,6 +7,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "genshin",
     description: "🎮 Statistics for Genshin Impact",
+    category: "default/Gaming",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {

@@ -6,6 +6,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "safebooru",
     description: "📷 Search images in Safebooru",
+    category: "default/Anime",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args.slice(0).join(" ");
 

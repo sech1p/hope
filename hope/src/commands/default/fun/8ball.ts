@@ -6,6 +6,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "8ball",
     description: "Ask magic ball about everything",
+    category: "default/Fun",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const responses = [
             "Yes!",

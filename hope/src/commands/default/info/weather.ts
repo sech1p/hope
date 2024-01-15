@@ -6,6 +6,7 @@ import Eris from "eris";
 export default {
     name: "weather",
     description: "⛅ Show weather for any city/country",
+    category: "default/Info",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const locationArgument = args[0];
         weather.find({

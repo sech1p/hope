@@ -5,6 +5,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "ping",
     description: "🏓 Pong!",
+    category: "default/Utils",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const startTime = Date.now();
         const ping = new Embed.EmbedBuilder({

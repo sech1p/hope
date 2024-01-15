@@ -4,10 +4,11 @@ import Colors from "../../../utils/Colors";
 import Hope from "../../../Hope";
 import Config from "../../../Config";
 import youtubeDl from "youtube-dl-exec";
-import { formatWithOptions } from "util";
+
 export default {
     name: "play",
     description: "🎵 Play music!",
+    category: "default/Music",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         try {
             const videoArgument = args[0].split("=")[1];

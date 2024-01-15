@@ -6,6 +6,7 @@ import Hope from "../../Hope";
 export default {
     name: "ban",
     description: "🔨 Ban someone from Guild",
+    category: "Admin", 
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         const reason = args.slice(1).join(" ");

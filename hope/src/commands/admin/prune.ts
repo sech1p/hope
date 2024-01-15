@@ -6,6 +6,7 @@ import Hope from "../../Hope";
 export default {
     name: "prune",
     description: "🗑 Prune message(s) from Guild",
+    category: "Admin",
     execute: async (bot: Eris.Client, message, args: string[]) => {
         const errorEmbed = (message) => {
             const embedFail = new Embed.EmbedBuilder({

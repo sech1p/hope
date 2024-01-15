@@ -6,6 +6,7 @@ import Embed from "../../../utils/Embed";
 export default {
     name: "tickle",
     description: "🪶 Tickle someone!",
+    category: "default/Social",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const tickleGifs = [
             "FDPJjtvBkIRYA",
