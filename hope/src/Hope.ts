@@ -60,12 +60,14 @@ const loadEvents = async (bot: Eris.Client) => {
     });
 };
 
+let commands = [];
 const loadCommands = async (bot: Eris.Client) => {
     log(`⏳ Loading commands...`)
     await glob(`dist/commands/**/**/*.js`).then(async (commandFiles: string[]) => {
         for (const commandFile of commandFiles) {
             try {
                 const { default: command } = await import(path.join(process.cwd(), commandFile));
+                commands.push(command);
                 if (typeof command.execute === "function") {
                     bot.on("messageCreate", (message: Eris.Message) => {
                         const content = message.content.trim();
@@ -103,6 +105,7 @@ export default {
     log,
     logError,
     footer,
+    commands,
     giphy,
     osuApi,
     genshinApi,
