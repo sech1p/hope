@@ -10,6 +10,9 @@ export default {
     name: "mal",
     description: "📝 View anime(s)/manga(s) from MyAnimeList",
     category: "default/Anime",
+    usage: `${Config.Prefix}mal anime Initial D`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "anime, manga, user",
     execute: async (bot, message, args) => {
         const argument = args[0];
         switch (argument) {

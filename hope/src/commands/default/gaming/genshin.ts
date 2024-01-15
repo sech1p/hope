@@ -8,6 +8,9 @@ export default {
     name: "genshin",
     description: "🎮 Statistics for Genshin Impact",
     category: "default/Gaming",
+    usage: `${Config.Prefix}genshin [uid]`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "user, weapons",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {

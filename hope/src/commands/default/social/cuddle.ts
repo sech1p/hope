@@ -2,11 +2,15 @@ import Eris from "eris";
 import Hope from "../../../Hope";
 import Colors from "../../../utils/Colors";
 import Embed from "../../../utils/Embed";
+import Config from "../../../Config";
 
 export default {
     name: "cuddle",
     description: "Cuddle someone!",
     category: "default/Social",
+    usage: `${Config.Prefix}queue`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         Hope.giphy.search("anime cuddle", (exception, result) => {

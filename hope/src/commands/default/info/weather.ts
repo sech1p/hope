@@ -2,11 +2,15 @@ import * as weather from "weather-js";
 import Embed from "../../../utils/Embed";
 import Hope from "../../../Hope";
 import Eris from "eris";
+import Config from "../../../Config";
 
 export default {
     name: "weather",
     description: "⛅ Show weather for any city/country",
     category: "default/Info",
+    usage: `${Config.Prefix}weather [city]`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const locationArgument = args[0];
         weather.find({

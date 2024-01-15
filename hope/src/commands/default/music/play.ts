@@ -9,6 +9,9 @@ export default {
     name: "play",
     description: "🎵 Play music!",
     category: "default/Music",
+    usage: `${Config.Prefix}play [link]`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         try {
             const videoArgument = args[0].split("=")[1];

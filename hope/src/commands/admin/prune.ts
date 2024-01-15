@@ -2,11 +2,15 @@ import Eris, { DiscordRESTError } from "eris";
 import Embed from "../../utils/Embed";
 import Colors from "../../utils/Colors";
 import Hope from "../../Hope";
+import Config from "../../Config";
 
 export default {
     name: "prune",
     description: "🗑 Prune message(s) from Guild",
     category: "Admin",
+    usage: `${Config.Prefix}prune 50`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "N/A",
     execute: async (bot: Eris.Client, message, args: string[]) => {
         const errorEmbed = (message) => {
             const embedFail = new Embed.EmbedBuilder({

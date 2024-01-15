@@ -1,11 +1,15 @@
 import Eris from "eris";
 import Hope from "../../../Hope";
 import Embed from "../../../utils/Embed";
+import Config from "../../../Config";
 
 export default {
     name: "uptime",
     description: "⏰ Show uptime for bot",
     category: "default/Utils",
+    usage: `${Config.Prefix}queue`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const days = Math.floor(process.uptime() / 86400);
         const hours = Math.floor(process.uptime() / 3600);

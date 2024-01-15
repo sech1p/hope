@@ -2,11 +2,15 @@ import Eris from "eris";
 import Hope from "../../../Hope"
 import Colors from "../../../utils/Colors";
 import Embed from "../../../utils/Embed";
+import Config from "../../../Config";
 
 export default {
     name: "danbooru",
     description: "📷 Search images in Danbooru",
     category: "default/Anime",
+    usage: `${Config.Prefix}danbooru catgirl`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args.slice(0).join(" ");
 

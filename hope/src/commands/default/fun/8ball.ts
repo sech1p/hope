@@ -2,11 +2,15 @@ import Eris from "eris";
 import Hope from "../../../Hope";
 import Colors from "../../../utils/Colors";
 import Embed from "../../../utils/Embed";
+import Config from "../../../Config";
 
 export default {
     name: "8ball",
     description: "Ask magic ball about everything",
     category: "default/Fun",
+    usage: `${Config.Prefix}8ball [answer]`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const responses = [
             "Yes!",

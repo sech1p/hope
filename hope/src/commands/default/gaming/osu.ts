@@ -9,6 +9,9 @@ export default {
     name: "osu",
     description: "🎮 Statistics for osu!",
     category: "default/Gaming",
+    usage: `${Config.Prefix}osu user [user]`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "user, beatmap",
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {

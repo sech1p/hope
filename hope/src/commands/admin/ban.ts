@@ -2,11 +2,15 @@ import Eris, { DiscordHTTPError, DiscordRESTError } from "eris";
 import Embed from "../../utils/Embed";
 import Colors from "../../utils/Colors";
 import Hope from "../../Hope";
+import Config from "../../Config";
 
 export default {
     name: "ban",
     description: "🔨 Ban someone from Guild",
     category: "Admin", 
+    usage: `${Config.Prefix}ban @user`,
+    exampleUsage: `${Config.Prefix}queue`,
+    subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         const reason = args.slice(1).join(" ");
