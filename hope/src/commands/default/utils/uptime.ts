@@ -7,8 +7,8 @@ export default {
     name: "uptime",
     description: "⏰ Show uptime for bot",
     category: "default/Utils",
-    usage: `${Config.Prefix}queue`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}uptime`,
+    exampleUsage: `${Config.Prefix}uptime`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const days = Math.floor(process.uptime() / 86400);

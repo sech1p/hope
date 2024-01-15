@@ -8,8 +8,8 @@ export default {
     name: "hug",
     description: "🫂 Hug someone!",
     category: "default/Social",
-    usage: `${Config.Prefix}queue`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}hug [user]`,
+    exampleUsage: `${Config.Prefix} @user`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];

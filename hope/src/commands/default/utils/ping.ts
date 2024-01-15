@@ -7,8 +7,8 @@ export default {
     name: "ping",
     description: "🏓 Pong!",
     category: "default/Utils",
-    usage: `${Config.Prefix}queue`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}ping`,
+    exampleUsage: `${Config.Prefix}ping`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const startTime = Date.now();

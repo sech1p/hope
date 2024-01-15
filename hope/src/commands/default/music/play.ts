@@ -10,7 +10,7 @@ export default {
     description: "🎵 Play music!",
     category: "default/Music",
     usage: `${Config.Prefix}play [link]`,
-    exampleUsage: `${Config.Prefix}queue`,
+    exampleUsage: `${Config.Prefix}play https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         try {

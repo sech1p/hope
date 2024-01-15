@@ -9,8 +9,8 @@ export default {
     name: "kitsu",
     description: "📝 View anime(s)/manga(s) from Kitsu",
     category: "default/Anime",
-    usage: `${Config.Prefix}kitsu anime Naruto`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}kitsu [subcommand] [query]`,
+    exampleUsage: `${Config.Prefix}kitsu anime Naruto`,
     subcommands: "anime, manga, user",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];

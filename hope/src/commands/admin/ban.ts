@@ -8,8 +8,8 @@ export default {
     name: "ban",
     description: "🔨 Ban someone from Guild",
     category: "Admin", 
-    usage: `${Config.Prefix}ban @user`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}ban [user]`,
+    exampleUsage: `${Config.Prefix}ban @user`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];

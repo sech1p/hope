@@ -9,7 +9,7 @@ export default {
     name: "minecraft",
     description: "🎮 Statistics for Minecraft (server/user)",
     category: "default/Gaming",
-    usage: `${Config.Prefix}minecraft user [user]`,
+    usage: `${Config.Prefix}minecraft [subcommand] [argument]`,
     subcommands: "server, user",
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];

@@ -9,7 +9,7 @@ export default {
     description: "Ask magic ball about everything",
     category: "default/Fun",
     usage: `${Config.Prefix}8ball [answer]`,
-    exampleUsage: `${Config.Prefix}queue`,
+    exampleUsage: `${Config.Prefix}8ball I am cool?`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const responses = [

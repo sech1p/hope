@@ -9,8 +9,8 @@ export default {
     name: "serverinfo",
     description: "📝 Get informations about Guild",
     category: "default/Utils",
-    usage: `${Config.Prefix}queue`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}serverinfo`,
+    exampleUsage: `${Config.Prefix}serverinfo`,
     subcommands: "N/A",
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const guild = bot.guilds.get(message.guildID);

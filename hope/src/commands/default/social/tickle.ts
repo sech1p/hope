@@ -8,8 +8,8 @@ export default {
     name: "tickle",
     description: "🪶 Tickle someone!",
     category: "default/Social",
-    usage: `${Config.Prefix}queue`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}tickle [user]`,
+    exampleUsage: `${Config.Prefix}tickle @user`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const tickleGifs = [

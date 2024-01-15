@@ -8,8 +8,8 @@ export default {
     name: "poke",
     description: "Poke someone!",
     category: "default/Social",
-    usage: `${Config.Prefix}queue`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}kiss [user]`,
+    exampleUsage: `${Config.Prefix}kiss @user`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];

@@ -8,8 +8,8 @@ export default {
     name: "prune",
     description: "🗑 Prune message(s) from Guild",
     category: "Admin",
-    usage: `${Config.Prefix}prune 50`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}prune [amount]`,
+    exampleUsage: `${Config.Prefix}prune 50`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message, args: string[]) => {
         const errorEmbed = (message) => {

@@ -25,8 +25,8 @@ export default {
     name: "help",
     description: "Display help",
     category: "default/Help",
-    usage: `${Config.Prefix}help`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}help [command?]`,
+    exampleUsage: `${Config.Prefix}help help`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         let commands = {
@@ -44,7 +44,7 @@ export default {
             commands.description.push(command.description);
             commands.category.push(command.category.toLowerCase());
             commands.usage.push(command.usage);
-            commands.exampleUsage.push(command.usage);
+            commands.exampleUsage.push(command.exampleUsage);
             commands.subcommands.push(command.subcommands);
         });
 
@@ -69,7 +69,6 @@ export default {
         const argument = args[0];
         if (argument) {
             const commandIndex = findIndexes(commands.name, argument)[0];
-            console.log(commands.subcommands[commandIndex][0])
             const commandEmbed = new Embed.EmbedBuilder({
                 title: `❓ ${commands.name[commandIndex]} help`,
                 description: `

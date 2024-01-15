@@ -8,8 +8,8 @@ export default {
     name: "danbooru",
     description: "📷 Search images in Danbooru",
     category: "default/Anime",
-    usage: `${Config.Prefix}danbooru catgirl`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}danbooru [query]`,
+    exampleUsage: `${Config.Prefix}danbooru catgirl`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args.slice(0).join(" ");

@@ -9,7 +9,7 @@ export default {
     description: "⛅ Show weather for any city/country",
     category: "default/Info",
     usage: `${Config.Prefix}weather [city]`,
-    exampleUsage: `${Config.Prefix}queue`,
+    exampleUsage: `${Config.Prefix}weather Posen`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const locationArgument = args[0];

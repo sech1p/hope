@@ -10,8 +10,8 @@ export default {
     name: "eval",
     description: "🤖 Evaluate code (**BOT OWNER ONLY**)",
     category: "Dev",
-    usage: `${Config.Prefix}queue`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}eval [code]`,
+    exampleUsage: `${Config.Prefix}eval 2+2`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         if (message.author.id !== Config.OwnerId) {

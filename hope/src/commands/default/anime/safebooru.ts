@@ -8,8 +8,8 @@ export default {
     name: "safebooru",
     description: "📷 Search images in Safebooru",
     category: "default/Anime",
-    usage: `${Config.Prefix}safebooru tickle`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}safebooru [query]`,
+    exampleUsage: `${Config.Prefix}safebooru tickle`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args.slice(0).join(" ");
