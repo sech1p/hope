@@ -9,8 +9,8 @@ export default {
     name: "osu",
     description: "🎮 Statistics for osu!",
     category: "default/Gaming",
-    usage: `${Config.Prefix}osu user [user]`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}osu [subcommand] [argument]`,
+    exampleUsage: `${Config.Prefix}osu beatmap 420`,
     subcommands: "user, beatmap",
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
@@ -51,7 +51,7 @@ export default {
                         color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
                         footer: Hope.footer(message),
                     });
-                    bot.createMessage(message.channel.id, { embed: embed.build() });
+                    return bot.createMessage(message.channel.id, { embed: embed.build() });
                 }).catch(() => {
                         const embedFail = new Embed.EmbedBuilder({
                         title: "❌ User not found",
@@ -81,7 +81,7 @@ export default {
                             },
                             {
                                 name: "Genre",
-                                value: String(beatmap[0].genre),
+                                value: String(beatmap[0].genre).replace(undefined, "N/A"),
                                 inline: true,
                             },
                             {
@@ -118,7 +118,7 @@ export default {
                         color: Colors.RANDOM[Math.floor(Math.random() * Colors.RANDOM.length)],
                         footer: Hope.footer(message),
                     });
-                    bot.createMessage(message.channel.id, { embed: embed.build() });
+                    return bot.createMessage(message.channel.id, { embed: embed.build() });
                 }).catch(() => {
                     const embedFail = new Embed.EmbedBuilder({
                         title: "❌ Beatmap not found",
@@ -128,12 +128,7 @@ export default {
                     return bot.createMessage(message.channel.id, { embed: embedFail.build() });
                 });              
             default:
-                const defaultEmbed = new Embed.EmbedBuilder({
-                    title: "❌ This command does not exists",
-                    description: `For available commands check \`${Config.Prefix}help\``,
-                    footer: Hope.footer(message),
-                });
-                return bot.createMessage(message.channel.id, { embed: defaultEmbed.build() });
+                break;
         };
     },
 };
