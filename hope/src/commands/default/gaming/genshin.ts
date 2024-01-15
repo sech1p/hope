@@ -8,14 +8,14 @@ export default {
     name: "genshin",
     description: "🎮 Statistics for Genshin Impact",
     category: "default/Gaming",
-    usage: `${Config.Prefix}genshin [uid]`,
-    exampleUsage: `${Config.Prefix}queue`,
+    usage: `${Config.Prefix}genshin [subcommand] [argument]`,
+    exampleUsage: `${Config.Prefix}genshin user 729113961`,
     subcommands: "user, weapons",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {
             case "user":
-                const userArgument = args[0];
+                const userArgument = args[1];
                 Hope.genshinApi.fetchUser(userArgument)
                     .then(user => {
                         let costumes = [];
