@@ -10,6 +10,7 @@ import { EnkaClient } from "enka-network-api";
 import { Mal } from "node-myanimelist";
 import Booru from "booru";
 import Kitsu from "kitsu";
+import { Client } from "pg";
 
 const bot = Eris(Config.Token);
 const giphy = require("giphy-api")(Config.GiphyToken);
@@ -18,6 +19,13 @@ const genshinApi = new EnkaClient();
 const malAuth = Mal.auth(Config.MALApiKey);
 const malApi = malAuth.Unstable.login(Config.MALLogin, Config.MALPassword);
 const kitsuApi = new Kitsu();
+const postgreClient = new Client({
+    user: Config.DatabaseUser,
+    host: Config.DatabaseHost,
+    database: Config.DatabaseName,
+    password: Config.DatabasePassword,
+    port: Config.DatabasePort,
+});
 
 const log = (message: string): any => {
     console.log(`[${moment().format("DD-MM-YYYY HH:MM:ss")}]: ${message}`);
@@ -82,6 +90,9 @@ const loadCommands = async (bot: Eris.Client) => {
 };
 
 const start = async () => {
+    await postgreClient.connect()
+        .then(log("🌸 Connected to database"))
+        .catch(exception => logError(`❌ Failed to connect to database: ${exception}`));
     await loadEvents(bot);
     await loadCommands(bot);
     await Promise.all([startServer(), bot.connect()]);
@@ -98,4 +109,5 @@ export default {
     malApi,
     Booru,
     kitsuApi,
+    postgreClient,
 };

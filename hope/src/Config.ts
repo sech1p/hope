@@ -15,6 +15,11 @@ const MALPassword: string = process.env.MAL_PASSWORD || "";
 const AniListKey: string = process.env.ANILIST_API_KEY || "";
 const DanbooruLogin: string = process.env.DANBOORU_LOGIN || "";
 const DanbooruKey: string = process.env.DANBOORU_API_KEY || "";
+const DatabaseUser: string = process.env.DATABASE_USER || "";
+const DatabaseHost: string = process.env.DATABASE_HOST || "";
+const DatabaseName: string = process.env.DATABASE_NAME || "";
+const DatabasePassword: string = process.env.DATABASE_PASSWORD || "";
+const DatabasePort: number = Number(process.env.DATABASE_PORT) || 5432;
 const Prefix: string = process.env.PREFIX || "!";
 
 export default {
@@ -30,5 +35,10 @@ export default {
     AniListKey,
     DanbooruLogin,
     DanbooruKey,
+    DatabaseUser,
+    DatabaseHost,
+    DatabaseName,
+    DatabasePassword,
+    DatabasePort,
     Prefix,
 };
