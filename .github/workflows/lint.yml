@@ -12,7 +12,7 @@ jobs:
       - name: ✔ Checkout
         uses: actions/checkout@v4
       - name: 💻 Download node lint code
-        uses: actions/@setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: cd hope
