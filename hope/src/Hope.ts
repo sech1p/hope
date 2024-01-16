@@ -11,6 +11,7 @@ import { Mal } from "node-myanimelist";
 import Booru from "booru";
 import Kitsu from "kitsu";
 import { Client } from "pg";
+import init from "./database/init";
 
 const bot = Eris(Config.Token);
 const giphy = require("giphy-api")(Config.GiphyToken);
@@ -95,6 +96,7 @@ const start = async () => {
     await postgreClient.connect()
         .then(log("🌸 Connected to database"))
         .catch(exception => logError(`❌ Failed to connect to database: ${exception}`));
+    await init.init(postgreClient);
     await loadEvents(bot);
     await loadCommands(bot);
     await Promise.all([startServer(), bot.connect()]);
