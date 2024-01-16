@@ -7,10 +7,10 @@ import init from "../../../database/init";
 
 export default {
     name: "work",
-    description: "👨‍🏭 work",
+    description: "👨‍🏭 Work and earn 💸",
     category: "default/Economy",
     usage: `${Config.Prefix}work`,
-    exampleUsage: `${Config.Prefix}queue`,
+    exampleUsage: `${Config.Prefix}work`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const professions = [
