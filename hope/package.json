@@ -10,7 +10,8 @@
     "start": "node dist/Hope.js",
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"npm run build && npm start\""
+    "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"npm run build && npm start\"",
+    "lint": "eslint src/*/*/*/*"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.23.3",
