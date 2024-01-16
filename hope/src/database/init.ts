@@ -25,11 +25,13 @@ const init = async (postgreClient: Client) => {
 };
 
 const initServer = async (postgreClient: Client, server, guildID: string) => {
-    await Hope.postgreClient.query(
-        `INSERT INTO servers ("guild", "guildID")
-        VALUES ('${server.name}', '${guildID}')
-        ON CONFLICT ("guildID") DO NOTHING;`
-    );
+    const query = {
+        text: `INSERT INTO servers ("guild", "guildID)
+        VALUES ($1, $2)
+        ON CONFLICT ("guildID") DO NOTHING`,
+        values: [server.name, guildID],
+    };
+    await postgreClient.query(query);
 }
 
 export default {
