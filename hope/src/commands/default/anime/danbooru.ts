@@ -27,7 +27,7 @@ export default {
                         footer: Hope.footer(message),
                     });
                     bot.createMessage(message.channel.id, { embed: embed.build() });
-                };
+                }
             });
     },
 };

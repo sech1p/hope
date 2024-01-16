@@ -129,6 +129,6 @@ export default {
                 });              
             default:
                 break;
-        };
+        }
     },
 };

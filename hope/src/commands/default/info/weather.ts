@@ -26,9 +26,9 @@ export default {
                 },
                 title: `Weather for ${result.location.name}`,
                 description: result.current.skytext,
-                color: (
+                color: 
                     JSON.stringify(result.current.temperature).includes("-") ?
-                        0x0000FF : 0xFFFF00),
+                        0x0000FF : 0xFFFF00,
                 fields: [
                     {
                         name: "Temperature",

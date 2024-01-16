@@ -14,7 +14,7 @@ const removeDuplicates = (array: Array<string>) => {
 const findIndexes = (array: Array<string>, searchedPhrase: string) => {
     let list = [];
     for (let i = 0; i < array.length; i++) {
-        if ((array[i].indexOf(searchedPhrase)) != -1) {
+        if (array[i].indexOf(searchedPhrase) != -1) {
             list.push(i);
         }
     }
