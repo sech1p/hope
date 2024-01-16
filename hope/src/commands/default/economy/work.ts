@@ -11,7 +11,7 @@ export default {
     description: "👨‍🏭 work",
     category: "default/Economy",
     usage: `${Config.Prefix}work`,
-    exampleUsage: `${Config.Prefix}work`,
+    exampleUsage: `${Config.Prefix}queue`,
     subcommands: "N/A",
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const professions = [
@@ -30,15 +30,34 @@ export default {
         bot.guilds.forEach(async server => {
             if (server.id === guildID) {
                 if (server.id.match(guildID)) {
-                    const query = {
-                        text: `UPDATE users
-                        SET "money" = "money" + $1
-                        WHERE "userID" = $2
-                        RETURNING *;`,
-                        values: [earnedMoney, message.author.id],
+                    const existingMoneyQuery = {
+                        text: `SELECT "money"
+                               FROM users
+                               WHERE "userID" = $1;`,
+                        values: [message.author.id],
                     };
+                    
                     await init.initServer(Hope.postgreClient, server.name, guildID);
-                    await srv.PutIntoUsers(Hope.postgreClient, message);
+                    const existingMoneyResult = await Hope.postgreClient.query(existingMoneyQuery);
+                    const existingMoney = existingMoneyResult.rows[0]?.money || 0;
+                    
+                    let query;
+                    if (existingMoney === 0) {
+                        query = {
+                            text: `INSERT INTO users ("userID", "money", "guildID")
+                                VALUES ($1, $2, $3)
+                                RETURNING "money";`,
+                            values: [message.author.id, earnedMoney, guildID],
+                        };
+                    } else {
+                        query = {
+                            text: `UPDATE users
+                                SET "xp" = "xp", "money" = "money" + $1
+                                WHERE "userID" = $2 AND "guildID" = $3
+                                RETURNING "money";`,
+                            values: [earnedMoney, message.author.id, guildID],
+                        };
+                    }
                     await Hope.postgreClient.query(query);
                 }
             }

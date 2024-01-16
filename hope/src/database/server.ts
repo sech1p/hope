@@ -6,7 +6,8 @@ const PutIntoUsers = async (postgreClient: Client, message: Eris.Message) => {
     const query = {
         text: `INSERT INTO users ("userID", "guildID")
         VALUES ($1, $2)
-        ON CONFLICT ("userID", "guildID") DO NOTHING`,
+        ON CONFLICT ("userID", "guildID") DO NOTHING
+        RETURNING *;`,
         values: [message.author.id, guildID],
     };
     await postgreClient.query(query);
