@@ -4,7 +4,6 @@ import Colors from "../../../utils/Colors";
 import Config from "../../../Config";
 import Hope from "../../../Hope";
 import init from "../../../database/init";
-import srv from "../../../database/server";
 
 export default {
     name: "work",
@@ -42,13 +41,15 @@ export default {
                     const existingMoney = existingMoneyResult.rows[0]?.money || 0;
                     
                     let query;
-                    if (existingMoney === 0) {
+                    if (existingMoney == null || existingMoney === 0) {
                         query = {
                             text: `INSERT INTO users ("userID", "money", "guildID")
-                                VALUES ($1, $2, $3)
-                                RETURNING "money";`,
+                                   VALUES ($1, $2, $3)
+                                   ON CONFLICT ("userID", "guildID") 
+                                   DO UPDATE SET "money" = COALESCE(users."money", 0) + $2
+                                   RETURNING *;`,
                             values: [message.author.id, earnedMoney, guildID],
-                        };
+                        };                        
                     } else {
                         query = {
                             text: `UPDATE users
