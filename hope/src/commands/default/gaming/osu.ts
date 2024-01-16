@@ -126,7 +126,8 @@ export default {
                         footer: Hope.footer(message),
                     });
                     return bot.createMessage(message.channel.id, { embed: embedFail.build() });
-                });              
+                });
+                break;
             default:
                 break;
         }

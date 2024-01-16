@@ -21,6 +21,7 @@ module.exports = exports = {
         "no-undef": codes.OFF,
         "no-unused-vars": codes.OFF,
         "no-case-declarations": codes.OFF,
+        "no-self-assign": codes.OFF,
         "valid-jsdoc": [ codes.ERROR, {
             "requireReturn": true,
             "requireReturnDescription": true,
