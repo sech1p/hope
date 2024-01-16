@@ -53,11 +53,11 @@ const loadEvents = async (bot: Eris.Client) => {
                     bot.on(event.name, event.run.bind(null, bot));
                 } else {
                     logError("❌ Invalid event file, run function is missing");
-                };
+                }
             } catch (exception: any) {
                 logError(`❌ Failed to load events: ${exception}`);
-            };
-        };
+            }
+        }
     });
 };
 
@@ -79,16 +79,16 @@ const loadCommands = async (bot: Eris.Client) => {
 
                             if (commandName === command.name.toLowerCase()) {
                                 command.execute(bot, message, args);
-                            };
-                        };
+                            }
+                        }
                     });
                 } else {
                     logError(`❌ Invalid command file, execute function in ${commandFile} is missing`);
-                };
+                }
             } catch (exception: any) {
                 logError(`❌ Failed to load commands: ${exception}`);
-            };
-        };
+            }
+        }
     });
 };
 
