@@ -1,0 +1,22 @@
+on: [push]
+
+env:
+  node: true
+  es6: true
+
+jobs:
+  lint_job:
+    runs-on: ubuntu-latest
+    name: 📝 Lint
+    steps:
+      - name: ✔ Checkout
+        uses: actions/checkout@v4
+      - name: 💻 Download node lint code
+        uses: actions/@setup-node@v4
+        with:
+          node-version: 20
+      - run: cd hope
+      - run: npm install
+      - run: npm install --save-dev
+      - run: npm install -g eslint
+      - run: npm run lint
