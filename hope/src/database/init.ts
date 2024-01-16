@@ -29,7 +29,7 @@ const initServer = async (postgreClient: Client, server, guildID: string) => {
         text: `INSERT INTO servers ("guild", "guildID")
         VALUES ($1, $2)
         ON CONFLICT ("guildID") DO NOTHING`,
-        values: [server.name, guildID],
+        values: [server, guildID],
     };
     await postgreClient.query(query);
 }
