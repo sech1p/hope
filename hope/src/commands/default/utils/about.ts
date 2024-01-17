@@ -60,7 +60,33 @@ export default {
                     color: Colors.Pink,
                     footer: Hope.footer(message),
                 });
-                return bot.createMessage(message.channel.id, { embed: embed.build() });
+                return bot.createMessage(message.channel.id, {
+                    embed: embed.build(),
+                    components: [
+                        {
+                            type: 1,
+                            components: [
+                                {
+                                    type: 2,
+                                    label: "Website",
+                                    style: 5,
+                                    url: "https://sech1p.ovh/#hopebot", // placeholder
+                                },
+                            ],
+                        },
+                        {
+                            type: 1,
+                            components: [
+                                {
+                                    type: 2,
+                                    label: "Repository",
+                                    style: 5,
+                                    url: "https://github.com/sech1p/hope"
+                                },
+                            ],
+                        },
+                    ],
+                });
             });
     },
 };
