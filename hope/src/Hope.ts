@@ -13,7 +13,11 @@ import Kitsu from "kitsu";
 import { Client } from "pg";
 import init from "./database/init";
 
-const bot = Eris(Config.Token);
+const bot = Eris(Config.Token, {
+    intents: [
+        "all",
+    ],
+});
 const giphy = require("giphy-api")(Config.GiphyToken);
 const osuApi = new osu.Api(Config.osuApiKey, {});
 const genshinApi = new EnkaClient();
