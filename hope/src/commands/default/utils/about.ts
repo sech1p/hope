@@ -9,7 +9,7 @@ const { version } = require("../../../../package.json");
 export default {
     name: "about",
     description: "ℹ Information about bot",
-    category: "default/Info",
+    category: "default/Utils",
     usage: `${Config.Prefix}about`,
     exampleUsage: `${Config.Prefix}about`,
     subcommands: "N/A",
