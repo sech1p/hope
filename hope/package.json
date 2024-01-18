@@ -8,8 +8,8 @@
   },
   "scripts": {
     "start": "node dist/Hope.js",
-    "build": "tsc --build",
-    "clean": "tsc --build --clean",
+    "build": "tsc --build && gulp",
+    "clean": "tsc --build --clean && gulp",
     "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"npm run build && npm start\"",
     "lint": "eslint src/*/*/*/*"
   },
