@@ -367,3 +367,7 @@ hope/.env
 
 # dist
 hope/dist
+
+# packages which not available from npm
+hope/packages/*
+!hope/packages/.gitkeep
