@@ -43,6 +43,7 @@
     "axios": "^1.6.5",
     "booru": "^2.6.4",
     "canvas": "^2.11.2",
+    "cheerio": "^1.0.0-rc.12",
     "dotenv": "^16.3.1",
     "enka-network-api": "^4.1.6",
     "eris": "^0.17.2",
