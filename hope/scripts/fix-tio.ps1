@@ -1,0 +1,1 @@
+@("const pako = require('pako');") + (Get-Content "../packages/tio-api/min-tioapi.js") + @("module.exports = TIO;") | Set-Content "../packages/tio-api/min-tioapi.js"
