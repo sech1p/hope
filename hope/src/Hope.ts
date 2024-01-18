@@ -61,6 +61,30 @@ const loadEvents = async (bot: Eris.Client) => {
             } catch (exception: any) {
                 logError(`❌ Failed to load events: ${exception}`);
             }
+        }        
+    });
+};
+
+const loadModules = async (bot: Eris.Client) => {
+    log("⌛ Loading modules...");
+    await glob(`dist/modules/**/index.js`).then(async (moduleFiles: string[]) => {
+        for (const moduleFile of moduleFiles) {
+            try {
+                const { default: module } = await import(path.join(process.cwd(), moduleFile));
+                if (typeof module.run === "function") {
+                    if (module.enabled) {
+                        bot.on("messageCreate", (message: Eris.Message) => {
+                            module.run(bot, message);
+                        });
+                    } else {
+                        log(`📴 Module ${module.name} is disabled`);
+                    }
+                } else {
+                    logError("❌ Invalid module file, run function is missing");
+                }
+            } catch (exception: any) {
+                logError(`❌ Failed to load modules: ${exception}`)
+            }
         }
     });
 };
@@ -102,6 +126,7 @@ const start = async () => {
         .catch(exception => logError(`❌ Failed to connect to database: ${exception}`));
     await init.init(postgreClient);
     await loadEvents(bot);
+    await loadModules(bot);
     await loadCommands(bot);
     await Promise.all([startServer(), bot.connect()]);
 }
