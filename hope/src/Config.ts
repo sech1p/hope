@@ -16,6 +16,7 @@ const AniListKey: string = process.env.ANILIST_API_KEY || "";
 const DanbooruLogin: string = process.env.DANBOORU_LOGIN || "";
 const DanbooruKey: string = process.env.DANBOORU_API_KEY || "";
 const YoutubeKey: string = process.env.YOUTUBE_API_KEY || "";
+const SoundcloudClientID: string = process.env.SOUNDCLOUD_CLIENT_ID || "";
 const DatabaseUser: string = process.env.DATABASE_USER || "";
 const DatabaseHost: string = process.env.DATABASE_HOST || "";
 const DatabaseName: string = process.env.DATABASE_NAME || "";
@@ -37,6 +38,7 @@ export default {
     DanbooruLogin,
     DanbooruKey,
     YoutubeKey,
+    SoundcloudClientID,
     DatabaseUser,
     DatabaseHost,
     DatabaseName,
