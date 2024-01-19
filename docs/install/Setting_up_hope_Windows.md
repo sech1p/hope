@@ -9,6 +9,10 @@ To install dependencies you need to do some commands. In PowerShell run each for
 ```powershell
 PS C:\hopelocation> cd hope # Navigate to main folder
 PS C:\hopelocation\hope> npm install # Install all dependencies
+PS C:\hopelocation\hope> npm install -g bower # Install bower
+PS C:\hopelocation\hope> cd src/web # Change directory to hope website
+PS C:\hopelocation\hope\src\web> bower install # Install all bower dependencies
+PS C:\hopelocation\hope\src\web> cd ../.. # Back to main directory
 ```
 
 After this, you must get packages from external sources. To fetch them run:
