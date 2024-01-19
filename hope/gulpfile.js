@@ -3,7 +3,7 @@ const gulp = require("gulp");
 gulp.task("bower", () => {
     return gulp
         .src("./src/web/bower_components/**")
-        .pipe(gulp.dest("./dist/web/bower_components"))
+        .pipe(gulp.dest("./dist/web/bower_components"));
 });
 
 gulp.task("views", () => {
@@ -13,5 +13,5 @@ gulp.task("views", () => {
 });
 
 gulp.task("default", gulp.series("bower", "views"), () => {
-    console.log("✔ Gulp finished successfully")
+    console.log("✔ Gulp finished successfully");
 });

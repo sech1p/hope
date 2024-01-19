@@ -152,5 +152,5 @@ export default {
                 });
                 return bot.createMessage(message.channel.id, { embed: defaultEmbed.build() });
         }
-    }
-}
+    },
+};

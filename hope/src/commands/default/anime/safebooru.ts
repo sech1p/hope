@@ -28,6 +28,6 @@ export default {
                     });
                     bot.createMessage(message.channel.id, { embed: embed.build() });
                 }
-            })
+            });
     },
 };
