@@ -10,7 +10,7 @@
     "start": "node dist/Hope.js",
     "build": "tsc --build && gulp",
     "clean": "tsc --build --clean && gulp",
-    "dev": "nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"npm run build && npm start\"",
+    "dev": "nodemon --watch \"src/**\" --ext \"ts,json,ejs\" --exec \"npm run build && npm start\"",
     "lint": "eslint src/*/*/*/*"
   },
   "devDependencies": {
