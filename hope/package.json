@@ -2,7 +2,7 @@
   "name": "hope",
   "version": "0.0.0",
   "description": "hope",
-  "main": "server.js",
+  "main": "src/Hope.ts",
   "author": {
     "name": ""
   },
