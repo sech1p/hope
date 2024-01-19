@@ -5,6 +5,8 @@ import morgan from "morgan";
 import cors from "cors";
 import setupApiRoutes from "./routes/api.routes";
 import Hope from "../Hope";
+import path from "path";
+
 dotenv.config();
 
 const app: Application = express();
@@ -17,6 +19,11 @@ app.use(express.urlencoded({
     limit: "10mb",
     parameterLimit: 10000,
 }));
+
+app.use(express.static(path.join(__dirname, "public")));
+app.use("/bower_components", express.static(path.join(__dirname, "bower_components")));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
 
 const port: number = parseInt(process.env.PORT || "8080");
 
