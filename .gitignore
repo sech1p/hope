@@ -371,3 +371,6 @@ hope/dist
 # packages which not available from npm
 hope/packages/*
 !hope/packages/.gitkeep
+
+# bower
+hope/src/web/bower_components
