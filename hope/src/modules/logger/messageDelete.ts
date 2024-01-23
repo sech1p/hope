@@ -13,7 +13,8 @@ export default {
                 Deleted on: <#${msg.channel.id}>`,
                 color: Colors.Gray,
             });
-            return bot.createMessage(message.channel.id, { embed: embed.build() });
+            if (message.author.id !== bot.user.id)
+                return bot.createMessage(message.channel.id, { embed: embed.build() });
         });
     }
 }
