@@ -73,9 +73,14 @@ const loadModules = async (bot: Eris.Client) => {
                 const { default: module } = await import(path.join(process.cwd(), moduleFile));
                 if (typeof module.run === "function") {
                     if (module.enabled) {
-                        bot.on("messageCreate", (message: Eris.Message) => {
-                            module.run(bot, message);
-                        });
+                        if (module.name === "logger")
+                            bot.on("messageCreate", (message: Eris.Message) => {
+                                module.run(bot, message);
+                            });
+                        else
+                            bot.on("connect", (message: Eris.Message) => {
+                                module.run(bot, message);
+                            });
                     } else {
                         log(`📴 Module ${module.name} is disabled`);
                     }
