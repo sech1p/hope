@@ -5,6 +5,8 @@ import Config from "./Config";
 import startServer from "./web/HopeServer";
 import glob from "glob-promise";
 import moment from "moment";
+import * as Sentry from "@sentry/node";
+import { ProfilingIntegration } from "@sentry/profiling-node";
 import osu from "node-osu";
 import { EnkaClient } from "enka-network-api";
 import { Mal } from "node-myanimelist";
@@ -30,6 +32,14 @@ const postgreClient = new Client({
     database: Config.DatabaseName,
     password: Config.DatabasePassword,
     port: Config.DatabasePort,
+});
+Sentry.init({
+    dsn: Config.SentryDsnUrl,
+    integrations: [
+        new ProfilingIntegration(),
+    ],
+    tracesSampleRate: 1.0,
+    profilesSampleRate: 1.0,
 });
 
 const log = (message: string): any => {

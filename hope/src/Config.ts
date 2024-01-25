@@ -22,6 +22,7 @@ const DatabaseHost: string = process.env.DATABASE_HOST || "";
 const DatabaseName: string = process.env.DATABASE_NAME || "";
 const DatabasePassword: string = process.env.DATABASE_PASSWORD || "";
 const DatabasePort: number = Number(process.env.DATABASE_PORT) || 5432;
+const SentryDsnUrl = process.env.SENTRY_DSN_URL || "";
 const Prefix: string = process.env.PREFIX || "!";
 
 export default {
@@ -44,5 +45,6 @@ export default {
     DatabaseName,
     DatabasePassword,
     DatabasePort,
+    SentryDsnUrl,
     Prefix,
 };
