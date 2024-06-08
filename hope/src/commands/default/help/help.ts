@@ -70,6 +70,14 @@ export default {
         const argument = args[0];
         if (argument) {
             const commandIndex = findIndexes(commands.name, argument)[0];
+            if (commands.name[commandIndex] === undefined) {
+                const errorEmbed = new Embed.EmbedBuilder({
+                    title: "❌ An error has occured",
+                    description: `Command \`${argument}\` does not exists`,
+                    color: Colors.Red,
+                });
+                return bot.createMessage(message.channel.id, { embed: errorEmbed.build() });
+            }
             const commandEmbed = new Embed.EmbedBuilder({
                 title: `❓ ${commands.name[commandIndex]} help`,
                 description: `
