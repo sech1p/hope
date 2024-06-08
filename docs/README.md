@@ -1,5 +1,3 @@
-<img src="../images/avatar/hope_avatar.png" alt="hope avatar" width="50%" height="50%">
-
 # 📝 hope Documentation
 
 ## 💻 Installation guides
