@@ -15,6 +15,7 @@ export default {
     usage: `${Config.Prefix}play [link]`,
     exampleUsage: `${Config.Prefix}play https://www.youtube.com/watch?v=dQw4w9WgXcQ`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const getTitle = async (url: string): Promise<string> => {
             let songTitle: string;

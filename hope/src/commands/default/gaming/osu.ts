@@ -12,6 +12,7 @@ export default {
     usage: `${Config.Prefix}osu [subcommand] [argument]`,
     exampleUsage: `${Config.Prefix}osu beatmap 420`,
     subcommands: "user, beatmap",
+    enabled: true,
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {

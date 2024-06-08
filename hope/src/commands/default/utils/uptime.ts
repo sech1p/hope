@@ -10,6 +10,7 @@ export default {
     usage: `${Config.Prefix}uptime`,
     exampleUsage: `${Config.Prefix}uptime`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const days = Math.floor(process.uptime() / 86400);
         const hours = Math.floor(process.uptime() / 3600);

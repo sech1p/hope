@@ -13,6 +13,7 @@ export default {
     usage: `${Config.Prefix}mal [subcommand] [query]`,
     exampleUsage: `${Config.Prefix}anime Initial D`,
     subcommands: "anime, manga, user",
+    enabled: false,
     execute: async (bot, message, args) => {
         const argument = args[0];
         switch (argument) {

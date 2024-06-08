@@ -12,6 +12,7 @@ export default {
     usage: `${Config.Prefix} [user?]`,
     exampleUsage: `${Config.Prefix} @user`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const userArgument = args[0];
         const user = userArgument ? userArgument : message.member.mention;

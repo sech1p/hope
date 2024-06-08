@@ -11,6 +11,7 @@ export default {
     usage: `${Config.Prefix}kick [user]`,
     exampleUsage: `${Config.Prefix}kick @user`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         const reason = args.slice(1).join(" ");

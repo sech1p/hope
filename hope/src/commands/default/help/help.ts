@@ -28,6 +28,7 @@ export default {
     usage: `${Config.Prefix}help [command?]`,
     exampleUsage: `${Config.Prefix}help help`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         let commands = {
             name: [],

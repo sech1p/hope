@@ -11,6 +11,7 @@ export default {
     usage: `${Config.Prefix}prune [amount]`,
     exampleUsage: `${Config.Prefix}prune 50`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message, args: string[]) => {
         const errorEmbed = (message) => {
             const embedFail = new Embed.EmbedBuilder({

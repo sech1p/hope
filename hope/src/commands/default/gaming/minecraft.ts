@@ -11,6 +11,7 @@ export default {
     category: "default/Gaming",
     usage: `${Config.Prefix}minecraft [subcommand] [argument]`,
     subcommands: "server, user",
+    enabled: true,
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {

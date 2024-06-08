@@ -12,6 +12,7 @@ export default {
     usage: `${Config.Prefix}kitsu [subcommand] [query]`,
     exampleUsage: `${Config.Prefix}kitsu anime Naruto`,
     subcommands: "anime, manga, user",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {

@@ -11,6 +11,7 @@ export default {
     usage: `${Config.Prefix}genshin [subcommand] [argument]`,
     exampleUsage: `${Config.Prefix}genshin user 729113961`,
     subcommands: "user, weapons",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         switch (argument) {

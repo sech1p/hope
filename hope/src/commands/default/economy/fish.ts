@@ -12,6 +12,7 @@ export default {
     usage: `${Config.Prefix}fish`,
     exampleUsage: `${Config.Prefix}fish`,
     subcommands: "N/A",
+    enabled: true,
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         // TODO: add fishing rod
 

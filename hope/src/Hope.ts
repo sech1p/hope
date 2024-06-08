@@ -111,7 +111,11 @@ const loadCommands = async (bot: Eris.Client) => {
         for (const commandFile of commandFiles) {
             try {
                 const { default: command } = await import(path.join(process.cwd(), commandFile));
-                commands.push(command);
+                if (command.enabled) {
+                    commands.push(command);
+                } else {
+                    log(`📴 Command ${command.name} is disabled`);
+                }
                 if (typeof command.execute === "function") {
                     bot.on("messageCreate", (message: Eris.Message) => {
                         const content = message.content.trim();

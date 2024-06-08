@@ -11,6 +11,7 @@ export default {
     usage: `${Config.Prefix}pat [user]`,
     exampleUsage: `${Config.Prefix}pat @user`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         Hope.giphy.search("anime pat", (exception, result) => {

@@ -10,6 +10,7 @@ export default {
     usage: `${Config.Prefix}code [language || language-list] [code]`,
     exampleUsage: `${Config.Prefix}code python3 print "owo"`,
     subcommands: "language-list",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const argument = args[0];
         const code = args.slice(1).join(" ");

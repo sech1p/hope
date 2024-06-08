@@ -11,6 +11,7 @@ export default {
     usage: `${Config.Prefix}cuddle [user]`,
     exampleUsage: `${Config.Prefix}cuddle @user`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const user = args[0];
         Hope.giphy.search("anime cuddle", (exception, result) => {

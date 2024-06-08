@@ -10,6 +10,7 @@ export default {
     usage: `${Config.Prefix}ping`,
     exampleUsage: `${Config.Prefix}ping`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const startTime = Date.now();
         const ping = new Embed.EmbedBuilder({

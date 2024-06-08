@@ -11,6 +11,7 @@ export default {
     usage: `${Config.Prefix}tickle [user]`,
     exampleUsage: `${Config.Prefix}tickle @user`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const tickleGifs = [
             "FDPJjtvBkIRYA",

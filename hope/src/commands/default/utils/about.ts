@@ -13,6 +13,7 @@ export default {
     usage: `${Config.Prefix}about`,
     exampleUsage: `${Config.Prefix}about`,
     subcommands: "N/A",
+    enabled: true,
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const cpu = osUtils.cpu;
         const mem = Math.round(process.memoryUsage().heapUsed / 1024 / 1024 * 100 / 100);

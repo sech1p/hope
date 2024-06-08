@@ -12,6 +12,7 @@ export default {
     usage: `${Config.Prefix}search [query]`,
     exampleUsage: `${Config.Prefix}search Rick Astley`, // you have been rickrolled
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const queryArgument = args.slice(0).join(" ");
         const options = {

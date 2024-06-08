@@ -8,6 +8,7 @@ export default {
     usage: `${Config.Prefix}queue [page?]`,
     exampleUsage: `${Config.Prefix}queue`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         //
     },

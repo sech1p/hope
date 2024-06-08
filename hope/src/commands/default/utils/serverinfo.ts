@@ -12,6 +12,7 @@ export default {
     usage: `${Config.Prefix}serverinfo`,
     exampleUsage: `${Config.Prefix}serverinfo`,
     subcommands: "N/A",
+    enabled: true,
     execute: (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const guild = bot.guilds.get(message.guildID);
         const embed = new Embed.EmbedBuilder({

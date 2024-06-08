@@ -12,6 +12,7 @@ export default {
     usage: `${Config.Prefix}work`,
     exampleUsage: `${Config.Prefix}work`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const professions = [
             "Artist",

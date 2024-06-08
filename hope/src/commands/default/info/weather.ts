@@ -11,6 +11,7 @@ export default {
     usage: `${Config.Prefix}weather [city]`,
     exampleUsage: `${Config.Prefix}weather Posen`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const locationArgument = args[0];
         weather.find({

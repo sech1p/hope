@@ -13,6 +13,7 @@ export default {
     usage: `${Config.Prefix}pokedex [pokemon_name]`,
     exampleUsage: `${Config.Prefix}pokedex Pikachu`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const pokemonArgument: string = args[0];
 

@@ -11,6 +11,7 @@ export default {
     usage: `${Config.Prefix}8ball [answer]`,
     exampleUsage: `${Config.Prefix}8ball I am cool?`,
     subcommands: "N/A",
+    enabled: true,
     execute: async (bot: Eris.Client, message: Eris.Message, args: string[]) => {
         const responses = [
             "Yes!",
