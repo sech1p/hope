@@ -27,6 +27,14 @@ export default {
             case "challenges": {
                 const username = args[1];
                 const tag = args[2];
+                if (!username || !tag) {
+                    const errorEmbed = new Embed.EmbedBuilder({
+                        title: "❌ Error",
+                        description: `Command usage: ${Config.Prefix}lol challenges <username> <tag>`,
+                        color: Colors.Red,
+                    });
+                    return bot.createMessage(message.channel.id, { embed: errorEmbed.build() });
+                }
                 await playerApi.Account.getByRiotId(
                     username, tag, Constants.RegionGroups.EUROPE
                 ).then(async data => {
